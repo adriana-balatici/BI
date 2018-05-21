@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="148"
-  DTS:VersionGUID="{2E4CCC6D-7383-4BEC-A32B-16A3941089B2}">
+  DTS:VersionBuild="164"
+  DTS:VersionGUID="{864F34C4-7103-4B23-9695-26D676C8ABFE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2668,11 +2668,11 @@ where [refTable].[tag] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task 1\Video Fact"
+              refId="Package\Data Flow Task 1\Video - tags mapping Fact table"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="Video Fact"
+              name="Video - tags mapping Fact table"
               usesDispositions="true"
               version="4">
               <properties>
@@ -2683,7 +2683,7 @@ where [refTable].[tag] = ?</property>
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[Fact]</property>
+                  name="OpenRowset">[Facts]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -2725,7 +2725,7 @@ where [refTable].[tag] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task 1\Video Fact.Connections[OleDbConnection]"
+                  refId="Package\Data Flow Task 1\Video - tags mapping Fact table.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[DESKTOP-37TE795.biProject]"
                   connectionManagerRefId="Package.ConnectionManagers[DESKTOP-37TE795.biProject]"
                   description="The OLE DB runtime connection used to access the database."
@@ -2733,170 +2733,70 @@ where [refTable].[tag] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task 1\Video Fact.Inputs[OLE DB Destination Input]"
+                  refId="Package\Data Flow Task 1\Video - tags mapping Fact table.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task 1\Video Fact.Inputs[OLE DB Destination Input].Columns[calendar_id]"
+                      refId="Package\Data Flow Task 1\Video - tags mapping Fact table.Inputs[OLE DB Destination Input].Columns[calendar_id]"
                       cachedDataType="i4"
                       cachedName="calendar_id"
-                      externalMetadataColumnId="Package\Data Flow Task 1\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[calendar_id]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Video - tags mapping Fact table.Inputs[OLE DB Destination Input].ExternalColumns[calendar_id]"
                       lineageId="Package\Data Flow Task 1\Calendar Lookup.Outputs[Lookup Match Output].Columns[calendar_id]" />
                     <inputColumn
-                      refId="Package\Data Flow Task 1\Video Fact.Inputs[OLE DB Destination Input].Columns[video_id]"
+                      refId="Package\Data Flow Task 1\Video - tags mapping Fact table.Inputs[OLE DB Destination Input].Columns[video_id]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="video_id"
-                      externalMetadataColumnId="Package\Data Flow Task 1\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[Video Lookup.video_id]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Video - tags mapping Fact table.Inputs[OLE DB Destination Input].ExternalColumns[Video Lookup.video_id]"
                       lineageId="Package\Data Flow Task 1\Initial table.Outputs[OLE DB Source Output].Columns[video_id]" />
                     <inputColumn
-                      refId="Package\Data Flow Task 1\Video Fact.Inputs[OLE DB Destination Input].Columns[tag_id]"
+                      refId="Package\Data Flow Task 1\Video - tags mapping Fact table.Inputs[OLE DB Destination Input].Columns[tag_id]"
                       cachedDataType="i4"
                       cachedName="tag_id"
-                      externalMetadataColumnId="Package\Data Flow Task 1\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[tag_id]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Video - tags mapping Fact table.Inputs[OLE DB Destination Input].ExternalColumns[tag_id]"
                       lineageId="Package\Data Flow Task 1\Tag Lookup.Outputs[Lookup Match Output].Columns[tag_id]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[calendar_id]"
+                      refId="Package\Data Flow Task 1\Video - tags mapping Fact table.Inputs[OLE DB Destination Input].ExternalColumns[calendar_id]"
                       dataType="i4"
                       name="calendar_id" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[tag_id]"
+                      refId="Package\Data Flow Task 1\Video - tags mapping Fact table.Inputs[OLE DB Destination Input].ExternalColumns[tag_id]"
                       dataType="i4"
                       name="tag_id" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[Video Lookup.video_id]"
+                      refId="Package\Data Flow Task 1\Video - tags mapping Fact table.Inputs[OLE DB Destination Input].ExternalColumns[Video Lookup.video_id]"
                       codePage="1252"
                       dataType="str"
                       length="1500"
                       name="Video Lookup.video_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[Initial table.video_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1500"
-                      name="Initial table.video_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[category_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1500"
-                      name="category_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[publish_time]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1500"
-                      name="publish_time" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[views]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1500"
-                      name="views" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[likes]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1500"
-                      name="likes" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[dislikes]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1500"
-                      name="dislikes" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[comment_count]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1500"
-                      name="comment_count" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[comments_disabled]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1500"
-                      name="comments_disabled" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[ratings_disabled]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1500"
-                      name="ratings_disabled" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[video_error_or_removed]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1500"
-                      name="video_error_or_removed" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[channel_title]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1500"
-                      name="channel_title" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[Initial table.title]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1500"
-                      name="Initial table.title" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[tags]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1500"
-                      name="tags" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[Initial table.thumbnail_link]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1500"
-                      name="Initial table.thumbnail_link" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[publish_date]"
-                      dataType="dbTimeStamp"
-                      name="publish_date" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[Video Lookup.title]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1500"
-                      name="Video Lookup.title" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[Video Lookup.thumbnail_link]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1500"
-                      name="Video Lookup.thumbnail_link" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task 1\Video Fact.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Data Flow Task 1\Video - tags mapping Fact table.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task 1\Video Fact.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Data Flow Task 1\Video - tags mapping Fact table.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task 1\Video Fact.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task 1\Video - tags mapping Fact table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task 1\Video Fact.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task 1\Video - tags mapping Fact table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task 1\Video Fact.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task 1\Video - tags mapping Fact table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task 1\Video Fact.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task 1\Video - tags mapping Fact table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -3143,7 +3043,7 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
               startId="Package\Data Flow Task 1\Data Conversion.Outputs[Data Conversion Output]" />
             <path
               refId="Package\Data Flow Task 1.Paths[Lookup Match Output]"
-              endId="Package\Data Flow Task 1\Video Fact.Inputs[OLE DB Destination Input]"
+              endId="Package\Data Flow Task 1\Video - tags mapping Fact table.Inputs[OLE DB Destination Input]"
               name="Lookup Match Output"
               startId="Package\Data Flow Task 1\Calendar Lookup.Outputs[Lookup Match Output]" />
             <path
@@ -3179,7 +3079,7 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{BC0CEBB8-BD04-4F0F-80EE-1A4986A3D12B}"
-          SQLTask:SqlStatementSource="truncate table [dbo].[Channel];&#xA;truncate table [dbo].[AllTags3];&#xA;truncate table [dbo].[Tags];&#xA;drop table [dbo].[Calendar]&#xA;truncate table [dbo].[Disabled];&#xA;truncate table [dbo].[UScategory];&#xA;truncate table [dbo].[USvideos];&#xA;truncate table [dbo].[USvideos_copie];&#xA;truncate table [dbo].[Video];"
+          SQLTask:SqlStatementSource="truncate table [dbo].[Channel];&#xA;truncate table [dbo].[AllTags3];&#xA;truncate table [dbo].[Tags];&#xA;drop table [dbo].[Calendar]&#xA;truncate table [dbo].[Disabled];&#xA;truncate table [dbo].[UScategory];&#xA;truncate table [dbo].[USvideos];&#xA;truncate table [dbo].[USvideos_copie];&#xA;truncate table [dbo].[Video];&#xA;truncate table [dbo].[Fact];"
           SQLTask:ServerVersion="9"
           SQLTask:ExtendedLogging="True"
           SQLTask:LocalConnectionForLogging=""
@@ -5453,7 +5353,7 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
       DTS:LocaleID="-1"
       DTS:ObjectName="Execute T-SQL Statement Task"
       DTS:TaskContact="Execute T-SQL Statement Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5693,7 +5593,7 @@ where [refTable].[channel_title] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Facts table creation\397:invalid};</property>
+                  name="ParameterMap">#{Package\Facts table creation\375:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -6509,7 +6409,7 @@ where [refTable].[comments_disabled] = ? and [refTable].[ratings_disabled] = ? a
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[USvideos_copie]</property>
+                  name="OpenRowset">[NumFacts]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -6543,7 +6443,7 @@ where [refTable].[comments_disabled] = ? and [refTable].[ratings_disabled] = ? a
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                  name="FastLoadOptions">TABLOCK</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -6629,7 +6529,7 @@ where [refTable].[comments_disabled] = ? and [refTable].[ratings_disabled] = ? a
                       cachedDataType="str"
                       cachedLength="1500"
                       cachedName="video_id"
-                      externalMetadataColumnId="Package\Facts table creation\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[video_id]"
+                      externalMetadataColumnId="Package\Facts table creation\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[vid_id]"
                       lineageId="Package\Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[video_id]" />
                   </inputColumns>
                   <externalMetadataColumns
@@ -6642,27 +6542,21 @@ where [refTable].[comments_disabled] = ? and [refTable].[ratings_disabled] = ? a
                       name="category_id" />
                     <externalMetadataColumn
                       refId="Package\Facts table creation\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[channel_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1500"
+                      dataType="i4"
                       name="channel_id" />
                     <externalMetadataColumn
                       refId="Package\Facts table creation\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[disabled_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1500"
+                      dataType="i4"
                       name="disabled_id" />
                     <externalMetadataColumn
                       refId="Package\Facts table creation\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[calendar_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1500"
+                      dataType="i4"
                       name="calendar_id" />
                     <externalMetadataColumn
                       refId="Package\Facts table creation\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[views]"
                       codePage="1252"
                       dataType="str"
-                      length="1000"
+                      length="1500"
                       name="views" />
                     <externalMetadataColumn
                       refId="Package\Facts table creation\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[likes]"
@@ -6683,59 +6577,11 @@ where [refTable].[comments_disabled] = ? and [refTable].[ratings_disabled] = ? a
                       length="1500"
                       name="comment_count" />
                     <externalMetadataColumn
-                      refId="Package\Facts table creation\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[video_id]"
+                      refId="Package\Facts table creation\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[vid_id]"
                       codePage="1252"
                       dataType="str"
                       length="1500"
-                      name="video_id" />
-                    <externalMetadataColumn
-                      refId="Package\Facts table creation\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[trending_date]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1500"
-                      name="trending_date" />
-                    <externalMetadataColumn
-                      refId="Package\Facts table creation\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[title]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1500"
-                      name="title" />
-                    <externalMetadataColumn
-                      refId="Package\Facts table creation\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[publish_time]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1500"
-                      name="publish_time" />
-                    <externalMetadataColumn
-                      refId="Package\Facts table creation\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[tags]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1500"
-                      name="tags" />
-                    <externalMetadataColumn
-                      refId="Package\Facts table creation\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[thumbnail_link]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1500"
-                      name="thumbnail_link" />
-                    <externalMetadataColumn
-                      refId="Package\Facts table creation\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[comments_disabled]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1500"
-                      name="comments_disabled" />
-                    <externalMetadataColumn
-                      refId="Package\Facts table creation\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[ratings_disabled]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1500"
-                      name="ratings_disabled" />
-                    <externalMetadataColumn
-                      refId="Package\Facts table creation\Video Fact.Inputs[OLE DB Destination Input].ExternalColumns[video_error_or_removed]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1500"
-                      name="video_error_or_removed" />
+                      name="vid_id" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -6821,7 +6667,7 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[video_id]};#{Package\Facts table creation\398:invalid};#{Package\Facts table creation\399:invalid};</property>
+                  name="ParameterMap">#{Package\Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[video_id]};#{Package\Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[title]};#{Package\Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[thumbnail_link]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -6912,13 +6758,13 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
                   synchronousInputId="Package\Facts table creation\Video Lookup.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Facts table creation\Video Lookup.Outputs[Lookup Match Output].Columns[video_id]"
+                      refId="Package\Facts table creation\Video Lookup.Outputs[Lookup Match Output].Columns[vid_id]"
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Copy Column"
                       length="1500"
-                      lineageId="Package\Facts table creation\Video Lookup.Outputs[Lookup Match Output].Columns[video_id]"
-                      name="video_id"
+                      lineageId="Package\Facts table creation\Video Lookup.Outputs[Lookup Match Output].Columns[vid_id]"
+                      name="vid_id"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -7074,6 +6920,28 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
           SQLTask:IgnoreDatabasesInNotOnlineState="False" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\tags chop chop first"
+      DTS:CreationName="Microsoft.DbMaintenanceTSQLExecuteTask"
+      DTS:Description="Execute T-SQL Statement Task"
+      DTS:DTSID="{CDD556B1-3B90-4630-ACC4-CF9302F2DF1C}"
+      DTS:ExecutableType="Microsoft.DbMaintenanceTSQLExecuteTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="tags chop chop first"
+      DTS:TaskContact="Execute T-SQL Statement Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BC0CEBB8-BD04-4F0F-80EE-1A4986A3D12B}"
+          SQLTask:SqlStatementSource="&#xA;update USvideos&#xA;set tags= (select top 1 value from string_split(tags,'|'))"
+          SQLTask:ServerVersion="9"
+          SQLTask:ExtendedLogging="True"
+          SQLTask:LocalConnectionForLogging=""
+          SQLTask:TaskName=""
+          SQLTask:IgnoreDatabasesInNotOnlineState="False" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -7100,6 +6968,14 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 10"
       DTS:To="Package\Data Flow Task 1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 11]"
+      DTS:CreationName=""
+      DTS:DTSID="{EC4B3667-D130-4A38-B970-7E2ABF28A657}"
+      DTS:From="Package\Data Flow Task 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 11"
+      DTS:To="Package\Execute T-SQL Statement Task" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
@@ -7135,11 +7011,11 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
       DTS:CreationName=""
-      DTS:DTSID="{3217C076-C844-4CB3-975C-3B2B60D37EBE}"
+      DTS:DTSID="{876F013D-DEE9-4C12-B66F-A90C18104EE0}"
       DTS:From="Package\Dimensions creation"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 6"
-      DTS:To="Package\Facts table creation" />
+      DTS:To="Package\tags chop chop first" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
       DTS:CreationName=""
@@ -7156,6 +7032,14 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 8"
       DTS:To="Package\All tags table SQL Task" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
+      DTS:CreationName=""
+      DTS:DTSID="{2FF3F8DC-BA99-4073-9E5B-65E8E8C5774C}"
+      DTS:From="Package\tags chop chop first"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 9"
+      DTS:To="Package\Facts table creation" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -7178,6 +7062,10 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
           Id="Package\Data Flow Task"
           TopLeft="45.7142824737393,81.5882349938257" />
         <NodeLayout
+          Size="160,41.6"
+          Id="Package\Data Flow Task 1"
+          TopLeft="403.54286397428,554.776474655046" />
+        <NodeLayout
           Size="248.8,41.6"
           Id="Package\delete all data from tables SQL Task"
           TopLeft="35.4285720319165,15.9058825760152" />
@@ -7192,11 +7080,11 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
         <NodeLayout
           Size="224.8,41.6"
           Id="Package\Execute T-SQL Statement Task"
-          TopLeft="67.4285725768732,539.435299977629" />
+          TopLeft="68.571429739193,662.870595433721" />
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\Facts table creation"
-          TopLeft="78.857144200072,464.847064254523" />
+          TopLeft="78.2857156189121,559.529418130894" />
         <NodeLayout
           Size="136,41.6"
           Id="Package\Format date"
@@ -7205,6 +7093,10 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
           Size="156,41.6"
           Id="Package\Generates Dates"
           TopLeft="548.571436891751,260.376473342341" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\tags chop chop first"
+          TopLeft="74.2857155507924,465.505886368273" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="120.914282473739,123.188234993826">
@@ -7265,6 +7157,28 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
                     Point3="-434.457149853998,49.9669314203996" />
                   <mssgle:LineSegment
                     End="-434.457149853998,69.8176496241745" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 10]"
+          TopLeft="248.685715618912,577.95294639297">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="154.857148355367,0"
+              Start="0,0"
+              End="147.357148355367,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="147.357148355367,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7352,17 +7266,17 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,77.9260149292767" />
+                    End="0,77.9260149292766" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,77.9260149292767"
-                    Point2="0,81.9260149292767"
-                    Point3="4,81.9260149292767" />
+                    Point1="0,77.9260149292766"
+                    Point2="0,81.9260149292766"
+                    Point3="4,81.9260149292766" />
                   <mssgle:LineSegment
-                    End="422.609531526501,81.9260149292767" />
+                    End="422.609531526501,81.9260149292766" />
                   <mssgle:CubicBezierSegment
-                    Point1="422.609531526501,81.9260149292767"
-                    Point2="426.609531526501,81.9260149292767"
-                    Point3="426.609531526501,85.9260149292767" />
+                    Point1="422.609531526501,81.9260149292766"
+                    Point2="426.609531526501,81.9260149292766"
+                    Point3="426.609531526501,85.9260149292766" />
                   <mssgle:LineSegment
                     End="426.609531526501,195.370590766326" />
                 </mssgle:SegmentCollection>
@@ -7375,18 +7289,18 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="164.285715618912,420.894122966516">
+          TopLeft="162.200001294272,420.894122966516">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,43.952941288007"
+              EndConnector="0,44.6117634017571"
               Start="0,0"
-              End="0,36.452941288007">
+              End="0,37.1117634017571">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.452941288007" />
+                    End="0,37.1117634017571" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7463,36 +7377,54 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="160,41.6"
-          Id="Package\Data Flow Task 1"
-          TopLeft="337.257148559726,513.929415651341" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="249.257144200072,485.647064254523">
+          Id="Package.PrecedenceConstraints[Constraint 9]"
+          TopLeft="161.685715584852,507.105886368273">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="88.0000043596541,49.0823513968182"
+              EndConnector="0,52.4235317626208"
               Start="0,0"
-              End="80.5000043596541,49.0823513968182">
+              End="0,44.9235317626208">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="40.0000021798271,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="40.0000021798271,0"
-                    Point2="44.0000021798271,0"
-                    Point3="44.0000021798271,4" />
+                    End="0,44.9235317626208" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 11]"
+          TopLeft="483.54286397428,596.376474655046">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-302.571434235086,66.4941207786744"
+              Start="0,0"
+              End="-302.571434235086,58.9941207786744">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="44.0000021798271,45.0823513968182" />
+                    End="0,29.2470603893372" />
                   <mssgle:CubicBezierSegment
-                    Point1="44.0000021798271,45.0823513968182"
-                    Point2="44.0000021798271,49.0823513968182"
-                    Point3="48.0000021798271,49.0823513968182" />
+                    Point1="0,29.2470603893372"
+                    Point2="0,33.2470603893372"
+                    Point3="-4,33.2470603893372" />
                   <mssgle:LineSegment
-                    End="80.5000043596541,49.0823513968182" />
+                    End="-298.571434235086,33.2470603893372" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-298.571434235086,33.2470603893372"
+                    Point2="-302.571434235086,33.2470603893372"
+                    Point3="-302.571434235086,37.2470603893372" />
+                  <mssgle:LineSegment
+                    End="-302.571434235086,58.9941207786744" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7508,7 +7440,7 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
     design-time-name="Package\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="159.2,41.6"
           Id="Package\Data Flow Task\Flat File Source 1"
@@ -7556,7 +7488,9 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7578,7 +7512,9 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7606,22 +7542,258 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
+    design-time-name="Package\Data Flow Task 1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Data Flow Task 1\Data Conversion"
+          TopLeft="481.900004087176,179.452939829447" />
+        <NodeLayout
+          Size="133.6,41.6"
+          Id="Package\Data Flow Task 1\Tag Lookup"
+          TopLeft="287.771430079791,371.905882721871" />
+        <NodeLayout
+          Size="141.6,41.6"
+          Id="Package\Data Flow Task 1\Video Lookup"
+          TopLeft="465.14286213505,268.000001166849" />
+        <NodeLayout
+          Size="131.2,41.6"
+          Id="Package\Data Flow Task 1\Initial table"
+          TopLeft="248,173.6" />
+        <NodeLayout
+          Size="156.8,41.6"
+          Id="Package\Data Flow Task 1\Calendar Lookup"
+          TopLeft="443.771430079791,555.105882721871" />
+        <NodeLayout
+          Size="228,41.6"
+          Id="Package\Data Flow Task 1\Video - tags mapping Fact table"
+          TopLeft="425.371430079791,639.905882721871" />
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[OLE DB Source Output]"
+          TopLeft="379.2,197.326469914723">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="102.700004087176,0"
+              Start="0,0"
+              End="95.2000040871756,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="95.2000040871756,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[Lookup Match Output2]"
+          TopLeft="354.571430079791,413.505882721871">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="167.6,141.6"
+              Start="0,0"
+              End="167.6,134.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,66.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,66.8"
+                    Point2="0,70.8"
+                    Point3="4,70.8" />
+                  <mssgle:LineSegment
+                    End="163.6,70.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="163.6,70.8"
+                    Point2="167.6,70.8"
+                    Point3="167.6,74.8" />
+                  <mssgle:LineSegment
+                    End="167.6,134.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="35.60861328125,75.8,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[Lookup Match Output1]"
+          TopLeft="535.94286213505,309.600001166849">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-181.371432055259,62.3058815550224"
+              Start="0,0"
+              End="-181.371432055259,54.8058815550224">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.1529407775112" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.1529407775112"
+                    Point2="0,31.1529407775112"
+                    Point3="-4,31.1529407775112" />
+                  <mssgle:LineSegment
+                    End="-177.371432055259,31.1529407775112" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-177.371432055259,31.1529407775112"
+                    Point2="-181.371432055259,31.1529407775112"
+                    Point3="-181.371432055259,35.1529407775112" />
+                  <mssgle:LineSegment
+                    End="-181.371432055259,54.8058815550224" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-138.87710274638,36.1529407775112,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[Lookup Match Output]"
+          TopLeft="522.171430079791,596.705882721871">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="17.2,43.1999999999999"
+              Start="0,0"
+              End="17.2,35.6999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.6"
+                    Point2="0,21.6"
+                    Point3="4,21.6" />
+                  <mssgle:LineSegment
+                    End="13.2,21.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13.2,21.6"
+                    Point2="17.2,21.6"
+                    Point3="17.2,25.6" />
+                  <mssgle:LineSegment
+                    End="17.2,35.6999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-39.59138671875,26.6,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[Data Conversion Output]"
+          TopLeft="559.500004087176,221.052939829447">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-23.5571419521254,46.9470613374017"
+              Start="0,0"
+              End="-23.5571419521254,39.4470613374017">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.4735306687009" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.4735306687009"
+                    Point2="0,23.4735306687009"
+                    Point3="-4,23.4735306687009" />
+                  <mssgle:LineSegment
+                    End="-19.5571419521254,23.4735306687009" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-19.5571419521254,23.4735306687009"
+                    Point2="-23.5571419521254,23.4735306687009"
+                    Point3="-23.5571419521254,27.4735306687009" />
+                  <mssgle:LineSegment
+                    End="-23.5571419521254,39.4470613374017" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task 1\Tag Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Tags]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task 1\Video - tags mapping Fact table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Dimensions creation">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="154.4,41.6"
-          Id="Package\Dimensions creation\Tags Table Dest"
-          TopLeft="722.4,530.4" />
+          Size="116,41.6"
+          Id="Package\Dimensions creation\Sort 2 1"
+          TopLeft="423.485723929503,348.188236160674" />
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\Dimensions creation\Channel Table Dest 1"
+          TopLeft="1.4210854715202E-13,526.647060170553" />
         <NodeLayout
           Size="128.8,41.6"
           Id="Package\Dimensions creation\Multicast 1"
           TopLeft="142.342861453854,261.36470746103" />
         <NodeLayout
-          Size="116,41.6"
-          Id="Package\Dimensions creation\Sort 2 1"
-          TopLeft="423.485723929503,348.188236160674" />
+          Size="154.4,41.6"
+          Id="Package\Dimensions creation\Tags Table Dest"
+          TopLeft="722.4,530.4" />
         <NodeLayout
           Size="97.6,41.6"
           Id="Package\Dimensions creation\Sort"
@@ -7635,10 +7807,6 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
           Id="Package\Dimensions creation\Disabled Table Dest 1"
           TopLeft="403.371438594741,530.682356355924" />
         <NodeLayout
-          Size="169.6,41.6"
-          Id="Package\Dimensions creation\Channel Table Dest 1"
-          TopLeft="1.4210854715202E-13,526.647060170553" />
-        <NodeLayout
           Size="149.6,41.6"
           Id="Package\Dimensions creation\OLE DB Source 1"
           TopLeft="136.171432736455,28.2352945809545" />
@@ -7646,6 +7814,10 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
           Size="149.6,41.6"
           Id="Package\Dimensions creation\OLE DB Source"
           TopLeft="748,188.8" />
+        <NodeLayout
+          Size="165.6,41.6"
+          Id="Package\Dimensions creation\Videos Destination"
+          TopLeft="196.8,526.4" />
         <EdgeLayout
           Id="Package\Dimensions creation.Paths[Sort Output2]"
           TopLeft="811.2,377.6">
@@ -7677,7 +7849,9 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7699,7 +7873,9 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7721,7 +7897,9 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7743,7 +7921,9 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7777,7 +7957,45 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dimensions creation.Paths[Multicast Output 3]"
+          TopLeft="206.742861453854,302.96470746103">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="72.8571385461461,223.43529253897"
+              Start="0,0"
+              End="72.8571385461461,215.93529253897">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,107.717646269485" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,107.717646269485"
+                    Point2="0,111.717646269485"
+                    Point3="4,111.717646269485" />
+                  <mssgle:LineSegment
+                    End="68.8571385461461,111.717646269485" />
+                  <mssgle:CubicBezierSegment
+                    Point1="68.8571385461461,111.717646269485"
+                    Point2="72.8571385461461,111.717646269485"
+                    Point3="72.8571385461461,115.717646269485" />
+                  <mssgle:LineSegment
+                    End="72.8571385461461,215.93529253897" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7811,7 +8029,9 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7845,50 +8065,22 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="165.6,41.6"
-          Id="Package\Dimensions creation\Videos Destination"
-          TopLeft="196.8,526.4" />
-        <EdgeLayout
-          Id="Package\Dimensions creation.Paths[Multicast Output 3]"
-          TopLeft="206.742861453854,302.96470746103">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="72.8571385461461,223.43529253897"
-              Start="0,0"
-              End="72.8571385461461,215.93529253897">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,107.717646269485" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,107.717646269485"
-                    Point2="0,111.717646269485"
-                    Point3="4,111.717646269485" />
-                  <mssgle:LineSegment
-                    End="68.8571385461461,111.717646269485" />
-                  <mssgle:CubicBezierSegment
-                    Point1="68.8571385461461,111.717646269485"
-                    Point2="72.8571385461461,111.717646269485"
-                    Point3="72.8571385461461,115.717646269485" />
-                  <mssgle:LineSegment
-                    End="72.8571385461461,215.93529253897" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimensions creation\Channel Table Dest 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Dimensions creation\Tags Table Dest">
     <Properties>
@@ -7904,14 +8096,6 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Dimensions creation\Disabled Table Dest 1">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Dimensions creation\Channel Table Dest 1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7944,35 +8128,52 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimensions creation\Videos Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Facts table creation">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="153.6,41.6"
-          Id="Package\Facts table creation\Channel Lookup"
-          TopLeft="192.685714528998,210.4" />
-        <NodeLayout
           Size="127.2,41.6"
           Id="Package\Facts table creation\Video Fact"
           TopLeft="179.085714528999,478.4" />
-        <NodeLayout
-          Size="131.2,41.6"
-          Id="Package\Facts table creation\Initial table"
-          TopLeft="1.71428444920764,12.0941172781288" />
         <NodeLayout
           Size="156,41.6"
           Id="Package\Facts table creation\Disabled Lookup"
           TopLeft="192.685714528998,291.2" />
         <NodeLayout
-          Size="155.2,41.6"
-          Id="Package\Facts table creation\Data Conversion"
-          TopLeft="235.614288536383,17.9470571075756" />
+          Size="153.6,41.6"
+          Id="Package\Facts table creation\Channel Lookup"
+          TopLeft="192.685714528998,210.4" />
+        <NodeLayout
+          Size="131.2,41.6"
+          Id="Package\Facts table creation\Initial table"
+          TopLeft="1.71428444920764,12.0941172781288" />
+        <NodeLayout
+          Size="141.6,41.6"
+          Id="Package\Facts table creation\Video Lookup"
+          TopLeft="218.857146584258,106.494118444977" />
         <NodeLayout
           Size="156.8,41.6"
           Id="Package\Facts table creation\Calendar Lookup"
           TopLeft="197.485714528999,393.6" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Facts table creation\Data Conversion"
+          TopLeft="235.614288536383,17.9470571075756" />
         <EdgeLayout
           Id="Package\Facts table creation.Paths[OLE DB Source Output]"
           TopLeft="132.914284449208,35.8205871928522">
@@ -7993,6 +8194,78 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Facts table creation.Paths[Lookup Match Output3]"
+          TopLeft="275.885714528999,435.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-33.2,43.1999999999999"
+              Start="0,0"
+              End="-33.2,35.6999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.6"
+                    Point2="0,21.6"
+                    Point3="-4,21.6" />
+                  <mssgle:LineSegment
+                    End="-29.2,21.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-29.2,21.6"
+                    Point2="-33.2,21.6"
+                    Point3="-33.2,25.6" />
+                  <mssgle:LineSegment
+                    End="-33.2,35.6999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-64.79138671875,26.6,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Facts table creation.Paths[Lookup Match Output2]"
+          TopLeft="289.657146584258,148.094118444977">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-20.1714320552594,62.3058815550226"
+              Start="0,0"
+              End="-20.1714320552594,54.8058815550226">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.1529407775113" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.1529407775113"
+                    Point2="0,31.1529407775113"
+                    Point3="-4,31.1529407775113" />
+                  <mssgle:LineSegment
+                    End="-16.1714320552594,31.1529407775113" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-16.1714320552594,31.1529407775113"
+                    Point2="-20.1714320552594,31.1529407775113"
+                    Point3="-20.1714320552594,35.1529407775113" />
+                  <mssgle:LineSegment
+                    End="-20.1714320552594,54.8058815550226" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-58.2771027463797,36.1529407775113,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8043,10 +8316,6 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="141.6,41.6"
-          Id="Package\Facts table creation\Video Lookup"
-          TopLeft="218.857146584258,106.494118444977" />
         <EdgeLayout
           Id="Package\Facts table creation.Paths[Data Conversion Output]"
           TopLeft="313.214288536383,59.5470571075756">
@@ -8081,119 +8350,11 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Facts table creation.Paths[Lookup Match Output2]"
-          TopLeft="289.657146584258,148.094118444977">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-20.1714320552594,62.3058815550226"
-              Start="0,0"
-              End="-20.1714320552594,54.8058815550226">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.1529407775113" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,27.1529407775113"
-                    Point2="0,31.1529407775113"
-                    Point3="-4,31.1529407775113" />
-                  <mssgle:LineSegment
-                    End="-16.1714320552594,31.1529407775113" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-16.1714320552594,31.1529407775113"
-                    Point2="-20.1714320552594,31.1529407775113"
-                    Point3="-20.1714320552594,35.1529407775113" />
-                  <mssgle:LineSegment
-                    End="-20.1714320552594,54.8058815550226" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-58.2771027463797,36.1529407775113,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Facts table creation.Paths[Lookup Match Output3]"
-          TopLeft="275.885714528999,435.2">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-33.2,43.1999999999999"
-              Start="0,0"
-              End="-33.2,35.6999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.6" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.6"
-                    Point2="0,21.6"
-                    Point3="-4,21.6" />
-                  <mssgle:LineSegment
-                    End="-29.2,21.6" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-29.2,21.6"
-                    Point2="-33.2,21.6"
-                    Point3="-33.2,25.6" />
-                  <mssgle:LineSegment
-                    End="-33.2,35.6999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-64.79138671875,26.6,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Facts table creation\Channel Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Channel]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Facts table creation\Video Fact">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Facts table creation\Initial table">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -8229,7 +8390,7 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Facts table creation\Calendar Lookup">
+    design-time-name="Package\Facts table creation\Channel Lookup">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -8239,7 +8400,7 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[Calendar]</Value>
+          type="q3:string">[dbo].[Channel]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -8252,7 +8413,7 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Dimensions creation\Videos Destination">
+    design-time-name="Package\Facts table creation\Initial table">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -8287,212 +8448,26 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Data Flow Task 1">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="127.2,41.6"
-          Id="Package\Data Flow Task 1\Video Fact"
-          TopLeft="425.371430079791,639.905882721871" />
-        <NodeLayout
-          Size="131.2,41.6"
-          Id="Package\Data Flow Task 1\Initial table"
-          TopLeft="248,173.6" />
-        <NodeLayout
-          Size="155.2,41.6"
-          Id="Package\Data Flow Task 1\Data Conversion"
-          TopLeft="481.900004087176,179.452939829447" />
-        <NodeLayout
-          Size="156.8,41.6"
-          Id="Package\Data Flow Task 1\Calendar Lookup"
-          TopLeft="443.771430079791,555.105882721871" />
-        <NodeLayout
-          Size="141.6,41.6"
-          Id="Package\Data Flow Task 1\Video Lookup"
-          TopLeft="465.14286213505,268.000001166849" />
-        <EdgeLayout
-          Id="Package\Data Flow Task 1.Paths[OLE DB Source Output]"
-          TopLeft="379.2,197.326469914723">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="102.700004087176,0"
-              Start="0,0"
-              End="95.2000040871756,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="95.2000040871756,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task 1.Paths[Data Conversion Output]"
-          TopLeft="559.500004087176,221.052939829447">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-23.5571419521254,46.9470613374017"
-              Start="0,0"
-              End="-23.5571419521254,39.4470613374017">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.4735306687009" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.4735306687009"
-                    Point2="0,23.4735306687009"
-                    Point3="-4,23.4735306687009" />
-                  <mssgle:LineSegment
-                    End="-19.5571419521254,23.4735306687009" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-19.5571419521254,23.4735306687009"
-                    Point2="-23.5571419521254,23.4735306687009"
-                    Point3="-23.5571419521254,27.4735306687009" />
-                  <mssgle:LineSegment
-                    End="-23.5571419521254,39.4470613374017" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task 1.Paths[Lookup Match Output]"
-          TopLeft="522.171430079791,596.705882721871">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-33.1999999999999,43.1999999999999"
-              Start="0,0"
-              End="-33.1999999999999,35.6999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.6" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.6"
-                    Point2="0,21.6"
-                    Point3="-4,21.6" />
-                  <mssgle:LineSegment
-                    End="-29.1999999999999,21.6" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-29.1999999999999,21.6"
-                    Point2="-33.1999999999999,21.6"
-                    Point3="-33.1999999999999,25.6" />
-                  <mssgle:LineSegment
-                    End="-33.1999999999999,35.6999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-64.79138671875,26.6,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="133.6,41.6"
-          Id="Package\Data Flow Task 1\Tag Lookup"
-          TopLeft="287.771430079791,371.905882721871" />
-        <EdgeLayout
-          Id="Package\Data Flow Task 1.Paths[Lookup Match Output1]"
-          TopLeft="535.94286213505,309.600001166849">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-181.371432055259,62.3058815550224"
-              Start="0,0"
-              End="-181.371432055259,54.8058815550224">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.1529407775112" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,27.1529407775112"
-                    Point2="0,31.1529407775112"
-                    Point3="-4,31.1529407775112" />
-                  <mssgle:LineSegment
-                    End="-177.371432055259,31.1529407775112" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-177.371432055259,31.1529407775112"
-                    Point2="-181.371432055259,31.1529407775112"
-                    Point3="-181.371432055259,35.1529407775112" />
-                  <mssgle:LineSegment
-                    End="-181.371432055259,54.8058815550224" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-138.877102746379,36.1529407775112,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task 1.Paths[Lookup Match Output2]"
-          TopLeft="354.571430079791,413.505882721871">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="167.6,141.6"
-              Start="0,0"
-              End="167.6,134.1">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,66.8" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,66.8"
-                    Point2="0,70.8"
-                    Point3="4,70.8" />
-                  <mssgle:LineSegment
-                    End="163.6,70.8" />
-                  <mssgle:CubicBezierSegment
-                    Point1="163.6,70.8"
-                    Point2="167.6,70.8"
-                    Point3="167.6,74.8" />
-                  <mssgle:LineSegment
-                    End="167.6,134.1" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="35.60861328125,75.8,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task 1\Video Fact">
+    design-time-name="Package\Facts table creation\Calendar Lookup">
     <Properties>
       <Property>
-        <Name>DataSourceViewID</Name>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Calendar]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q2:string">Table</Value>
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
