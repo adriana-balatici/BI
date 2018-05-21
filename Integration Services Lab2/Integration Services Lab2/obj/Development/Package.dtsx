@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="192"
-  DTS:VersionGUID="{F78400DF-97F6-421A-BD67-2763DB67B743}">
+  DTS:VersionBuild="203"
+  DTS:VersionGUID="{A9675346-2768-45C2-A781-9CB246FBA77B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -296,7 +296,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="All tags table SQL Task"
       DTS:TaskContact="Execute T-SQL Statement Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -538,7 +538,7 @@ where [refTable].[channel_title] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Big Facts table creation\495:invalid};</property>
+                  name="ParameterMap">#{Package\Big Facts table creation\493:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -775,7 +775,7 @@ where [refTable].[comments_disabled] = ? and [refTable].[ratings_disabled] = ? a
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Big Facts table creation\496:invalid};#{Package\Big Facts table creation\497:invalid};#{Package\Big Facts table creation\498:invalid};</property>
+                  name="ParameterMap">#{Package\Big Facts table creation\494:invalid};#{Package\Big Facts table creation\495:invalid};#{Package\Big Facts table creation\496:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1376,7 +1376,7 @@ where [refTable].[comments_disabled] = ? and [refTable].[ratings_disabled] = ? a
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">3</property>
+                  typeConverter="AccessMode">0</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -1612,7 +1612,7 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Big Facts table creation\499:invalid};#{Package\Big Facts table creation\500:invalid};#{Package\Big Facts table creation\501:invalid};</property>
+                  name="ParameterMap">#{Package\Big Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[video_id]};#{Package\Big Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[title]};#{Package\Big Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[thumbnail_link]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1697,73 +1697,25 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
                 <output
                   refId="Package\Big Facts table creation\Video Lookup.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
-                  errorRowDisposition="FailComponent"
+                  errorRowDisposition="IgnoreFailure"
                   exclusionGroup="1"
                   name="Lookup Match Output"
                   synchronousInputId="Package\Big Facts table creation\Video Lookup.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Big Facts table creation\Video Lookup.Outputs[Lookup Match Output].Columns[vid_id]"
+                      refId="Package\Big Facts table creation\Video Lookup.Outputs[Lookup Match Output].Columns[video_id]"
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Copy Column"
                       length="1500"
-                      lineageId="Package\Big Facts table creation\Video Lookup.Outputs[Lookup Match Output].Columns[vid_id]"
-                      name="vid_id"
+                      lineageId="Package\Big Facts table creation\Video Lookup.Outputs[Lookup Match Output].Columns[video_id]"
+                      name="video_id"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table from which a column is copied."
                           name="CopyFromReferenceColumn">video_id</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Big Facts table creation\Video Lookup.Outputs[Lookup Match Output].Columns[title]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Copy Column"
-                      length="1500"
-                      lineageId="Package\Big Facts table creation\Video Lookup.Outputs[Lookup Match Output].Columns[title]"
-                      name="title"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">title</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Big Facts table creation\Video Lookup.Outputs[Lookup Match Output].Columns[thumbnail_link]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Copy Column"
-                      length="1500"
-                      lineageId="Package\Big Facts table creation\Video Lookup.Outputs[Lookup Match Output].Columns[thumbnail_link]"
-                      name="thumbnail_link"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">thumbnail_link</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Big Facts table creation\Video Lookup.Outputs[Lookup Match Output].Columns[status]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Copy Column"
-                      length="100"
-                      lineageId="Package\Big Facts table creation\Video Lookup.Outputs[Lookup Match Output].Columns[status]"
-                      name="status"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">status</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -1868,7 +1820,7 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
       DTS:LocaleID="-1"
       DTS:ObjectName="Delete invalid row SQL Task"
       DTS:TaskContact="Execute T-SQL Statement Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5207,7 +5159,7 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
       DTS:LocaleID="-1"
       DTS:ObjectName="Format date"
       DTS:TaskContact="Execute T-SQL Statement Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -6638,7 +6590,7 @@ where [refTable].[date] = ?</property>
                       cachedDataType="str"
                       cachedLength="1500"
                       cachedName="publish_time"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[publish_time]" />
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[publish_time]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -6663,7 +6615,7 @@ where [refTable].[date] = ?</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[publish_time]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[publish_time]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -6698,11 +6650,209 @@ where [refTable].[date] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Small Facts table creation\Initial table"
+              refId="Package\Small Facts table creation\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Video]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Video]) [refTable]
+where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumbnail_link] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="video_id" dataType="DT_STR" length="1500" precision="0" scale="0" codePage="1250"/&gt;&lt;referenceColumn name="title" dataType="DT_STR" length="1500" precision="0" scale="0" codePage="1250"/&gt;&lt;referenceColumn name="thumbnail_link" dataType="DT_STR" length="1500" precision="0" scale="0" codePage="1250"/&gt;&lt;referenceColumn name="status" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1250"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[video_id]};#{Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[title]};#{Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[thumbnail_link]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Small Facts table creation\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-37TE795.biProject]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-37TE795.biProject]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Small Facts table creation\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Small Facts table creation\Lookup.Inputs[Lookup Input].Columns[video_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1500"
+                      cachedName="video_id"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[video_id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">video_id</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Small Facts table creation\Lookup.Inputs[Lookup Input].Columns[title]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1500"
+                      cachedName="title"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[title]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">title</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Small Facts table creation\Lookup.Inputs[Lookup Input].Columns[thumbnail_link]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1500"
+                      cachedName="thumbnail_link"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[thumbnail_link]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">thumbnail_link</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Small Facts table creation\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Small Facts table creation\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Small Facts table creation\Lookup.Outputs[Lookup Match Output].Columns[video_id]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="1500"
+                      lineageId="Package\Small Facts table creation\Lookup.Outputs[Lookup Match Output].Columns[video_id]"
+                      name="video_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">video_id</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Small Facts table creation\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Small Facts table creation\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Small Facts table creation\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Small Facts table creation\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Small Facts table creation\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Small Facts table creation\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Small Facts table creation\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Small Facts table creation\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Small Facts table creation\OLE DB Source"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="Initial table"
+              name="OLE DB Source"
               usesDispositions="true"
               version="7">
               <properties>
@@ -6747,7 +6897,7 @@ where [refTable].[date] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Small Facts table creation\Initial table.Connections[OleDbConnection]"
+                  refId="Package\Small Facts table creation\OLE DB Source.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[DESKTOP-37TE795.biProject]"
                   connectionManagerRefId="Package.ConnectionManagers[DESKTOP-37TE795.biProject]"
                   description="The OLE DB runtime connection used to access the database."
@@ -6755,246 +6905,246 @@ where [refTable].[date] = ?</property>
               </connections>
               <outputs>
                 <output
-                  refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output]"
+                  refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[video_id]"
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[video_id]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].ExternalColumns[video_id]"
-                      length="50"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[video_id]"
+                      externalMetadataColumnId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[video_id]"
+                      length="1500"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[video_id]"
                       name="video_id"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[category_id]"
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[title]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].ExternalColumns[category_id]"
+                      externalMetadataColumnId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[title]"
                       length="1500"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[category_id]"
-                      name="category_id"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[publish_time]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].ExternalColumns[publish_time]"
-                      length="1500"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[publish_time]"
-                      name="publish_time"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[views]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].ExternalColumns[views]"
-                      length="1500"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[views]"
-                      name="views"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[likes]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].ExternalColumns[likes]"
-                      length="1500"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[likes]"
-                      name="likes"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[dislikes]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].ExternalColumns[dislikes]"
-                      length="1500"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[dislikes]"
-                      name="dislikes"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[comment_count]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].ExternalColumns[comment_count]"
-                      length="1500"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[comment_count]"
-                      name="comment_count"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[comments_disabled]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].ExternalColumns[comments_disabled]"
-                      length="1500"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[comments_disabled]"
-                      name="comments_disabled"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[ratings_disabled]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].ExternalColumns[ratings_disabled]"
-                      length="1500"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[ratings_disabled]"
-                      name="ratings_disabled"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[video_error_or_removed]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].ExternalColumns[video_error_or_removed]"
-                      length="1500"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[video_error_or_removed]"
-                      name="video_error_or_removed"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[channel_title]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].ExternalColumns[channel_title]"
-                      length="1500"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[channel_title]"
-                      name="channel_title"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[title]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].ExternalColumns[title]"
-                      length="1500"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[title]"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[title]"
                       name="title"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[tags]"
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[channel_title]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].ExternalColumns[tags]"
+                      externalMetadataColumnId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[channel_title]"
                       length="1500"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[tags]"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[channel_title]"
+                      name="channel_title"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[category_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[category_id]"
+                      length="1500"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[category_id]"
+                      name="category_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[publish_time]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[publish_time]"
+                      length="1500"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[publish_time]"
+                      name="publish_time"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[tags]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tags]"
+                      length="1500"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[tags]"
                       name="tags"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[thumbnail_link]"
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[views]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].ExternalColumns[thumbnail_link]"
+                      externalMetadataColumnId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[views]"
                       length="1500"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[thumbnail_link]"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[views]"
+                      name="views"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[likes]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[likes]"
+                      length="1500"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[likes]"
+                      name="likes"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[dislikes]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dislikes]"
+                      length="1500"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[dislikes]"
+                      name="dislikes"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[comment_count]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[comment_count]"
+                      length="1500"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[comment_count]"
+                      name="comment_count"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[thumbnail_link]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[thumbnail_link]"
+                      length="1500"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[thumbnail_link]"
                       name="thumbnail_link"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[comments_disabled]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[comments_disabled]"
+                      length="1500"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[comments_disabled]"
+                      name="comments_disabled"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[ratings_disabled]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ratings_disabled]"
+                      length="1500"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[ratings_disabled]"
+                      name="ratings_disabled"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[video_error_or_removed]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[video_error_or_removed]"
+                      length="1500"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[video_error_or_removed]"
+                      name="video_error_or_removed"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].ExternalColumns[video_id]"
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[video_id]"
                       codePage="1252"
                       dataType="str"
                       length="1500"
                       name="video_id" />
                     <externalMetadataColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].ExternalColumns[title]"
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[title]"
                       codePage="1252"
                       dataType="str"
                       length="1500"
                       name="title" />
                     <externalMetadataColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].ExternalColumns[channel_title]"
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[channel_title]"
                       codePage="1252"
                       dataType="str"
                       length="1500"
                       name="channel_title" />
                     <externalMetadataColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].ExternalColumns[category_id]"
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[category_id]"
                       codePage="1252"
                       dataType="str"
                       length="1500"
                       name="category_id" />
                     <externalMetadataColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].ExternalColumns[publish_time]"
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[publish_time]"
                       codePage="1252"
                       dataType="str"
                       length="1500"
                       name="publish_time" />
                     <externalMetadataColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].ExternalColumns[tags]"
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tags]"
                       codePage="1252"
                       dataType="str"
                       length="1500"
                       name="tags" />
                     <externalMetadataColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].ExternalColumns[views]"
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[views]"
                       codePage="1252"
                       dataType="str"
                       length="1500"
                       name="views" />
                     <externalMetadataColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].ExternalColumns[likes]"
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[likes]"
                       codePage="1252"
                       dataType="str"
                       length="1500"
                       name="likes" />
                     <externalMetadataColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].ExternalColumns[dislikes]"
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dislikes]"
                       codePage="1252"
                       dataType="str"
                       length="1500"
                       name="dislikes" />
                     <externalMetadataColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].ExternalColumns[comment_count]"
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[comment_count]"
                       codePage="1252"
                       dataType="str"
                       length="1500"
                       name="comment_count" />
                     <externalMetadataColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].ExternalColumns[thumbnail_link]"
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[thumbnail_link]"
                       codePage="1252"
                       dataType="str"
                       length="1500"
                       name="thumbnail_link" />
                     <externalMetadataColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].ExternalColumns[comments_disabled]"
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[comments_disabled]"
                       codePage="1252"
                       dataType="str"
                       length="1500"
                       name="comments_disabled" />
                     <externalMetadataColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].ExternalColumns[ratings_disabled]"
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ratings_disabled]"
                       codePage="1252"
                       dataType="str"
                       length="1500"
                       name="ratings_disabled" />
                     <externalMetadataColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].ExternalColumns[video_error_or_removed]"
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[video_error_or_removed]"
                       codePage="1252"
                       dataType="str"
                       length="1500"
@@ -7002,120 +7152,120 @@ where [refTable].[date] = ?</property>
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output].Columns[video_id]"
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[video_id]"
                       codePage="1252"
                       dataType="str"
                       length="1500"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output].Columns[video_id]"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[video_id]"
                       name="video_id" />
                     <outputColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output].Columns[category_id]"
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[title]"
                       codePage="1252"
                       dataType="str"
                       length="1500"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output].Columns[category_id]"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[title]"
+                      name="title" />
+                    <outputColumn
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[channel_title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1500"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[channel_title]"
+                      name="channel_title" />
+                    <outputColumn
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[category_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1500"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[category_id]"
                       name="category_id" />
                     <outputColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output].Columns[publish_time]"
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[publish_time]"
                       codePage="1252"
                       dataType="str"
                       length="1500"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output].Columns[publish_time]"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[publish_time]"
                       name="publish_time" />
                     <outputColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output].Columns[views]"
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tags]"
                       codePage="1252"
                       dataType="str"
                       length="1500"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output].Columns[views]"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tags]"
+                      name="tags" />
+                    <outputColumn
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[views]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1500"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[views]"
                       name="views" />
                     <outputColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output].Columns[likes]"
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[likes]"
                       codePage="1252"
                       dataType="str"
                       length="1500"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output].Columns[likes]"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[likes]"
                       name="likes" />
                     <outputColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output].Columns[dislikes]"
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dislikes]"
                       codePage="1252"
                       dataType="str"
                       length="1500"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output].Columns[dislikes]"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dislikes]"
                       name="dislikes" />
                     <outputColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output].Columns[comment_count]"
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[comment_count]"
                       codePage="1252"
                       dataType="str"
                       length="1500"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output].Columns[comment_count]"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[comment_count]"
                       name="comment_count" />
                     <outputColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output].Columns[comments_disabled]"
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[thumbnail_link]"
                       codePage="1252"
                       dataType="str"
                       length="1500"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output].Columns[comments_disabled]"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[thumbnail_link]"
+                      name="thumbnail_link" />
+                    <outputColumn
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[comments_disabled]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1500"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[comments_disabled]"
                       name="comments_disabled" />
                     <outputColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output].Columns[ratings_disabled]"
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ratings_disabled]"
                       codePage="1252"
                       dataType="str"
                       length="1500"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output].Columns[ratings_disabled]"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ratings_disabled]"
                       name="ratings_disabled" />
                     <outputColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output].Columns[video_error_or_removed]"
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[video_error_or_removed]"
                       codePage="1252"
                       dataType="str"
                       length="1500"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output].Columns[video_error_or_removed]"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[video_error_or_removed]"
                       name="video_error_or_removed" />
                     <outputColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
-                    <outputColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output].Columns[channel_title]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1500"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output].Columns[channel_title]"
-                      name="channel_title" />
-                    <outputColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output].Columns[title]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1500"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output].Columns[title]"
-                      name="title" />
-                    <outputColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output].Columns[tags]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1500"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output].Columns[tags]"
-                      name="tags" />
-                    <outputColumn
-                      refId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output].Columns[thumbnail_link]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1500"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Error Output].Columns[thumbnail_link]"
-                      name="thumbnail_link" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -7178,7 +7328,7 @@ where [refTable].[tag] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[tags]};</property>
+                  name="ParameterMap">#{Package\Small Facts table creation\497:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -7207,7 +7357,7 @@ where [refTable].[tag] = ?</property>
                       cachedDataType="str"
                       cachedLength="1500"
                       cachedName="tags"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[tags]">
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[tags]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -7297,7 +7447,7 @@ where [refTable].[tag] = ?</property>
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[Facts]</property>
+                  name="OpenRowset">[dbo].[Facts]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -7319,7 +7469,7 @@ where [refTable].[tag] = ?</property>
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">3</property>
+                  typeConverter="AccessMode">0</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -7363,10 +7513,10 @@ where [refTable].[tag] = ?</property>
                       refId="Package\Small Facts table creation\Video - tags mapping Fact table.Inputs[OLE DB Destination Input].Columns[video_id]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="1500"
                       cachedName="video_id"
                       externalMetadataColumnId="Package\Small Facts table creation\Video - tags mapping Fact table.Inputs[OLE DB Destination Input].ExternalColumns[Video Lookup.video_id]"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[video_id]" />
+                      lineageId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output].Columns[video_id]" />
                     <inputColumn
                       refId="Package\Small Facts table creation\Video - tags mapping Fact table.Inputs[OLE DB Destination Input].Columns[tag_id]"
                       cachedDataType="i4"
@@ -7418,241 +7568,11 @@ where [refTable].[tag] = ?</property>
                 </output>
               </outputs>
             </component>
-            <component
-              refId="Package\Small Facts table creation\Video Lookup"
-              componentClassID="Microsoft.Lookup"
-              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
-              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="Video Lookup"
-              usesDispositions="true"
-              version="6">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Specifies the SQL statement that generates the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Video]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Video]) [refTable]
-where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumbnail_link] = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the type of connection used to access the reference dataset."
-                  name="ConnectionType"
-                  typeConverter="LookupConnectionType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the cache type of the lookup table."
-                  name="CacheType"
-                  typeConverter="CacheType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                  name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
-                  name="NoMatchCachePercentage">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
-                  name="MaxMemoryUsage">25</property>
-                <property
-                  dataType="System.Int64"
-                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
-                  name="MaxMemoryUsage64">25</property>
-                <property
-                  dataType="System.String"
-                  description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="video_id" dataType="DT_STR" length="1500" precision="0" scale="0" codePage="1250"/&gt;&lt;referenceColumn name="title" dataType="DT_STR" length="1500" precision="0" scale="0" codePage="1250"/&gt;&lt;referenceColumn name="thumbnail_link" dataType="DT_STR" length="1500" precision="0" scale="0" codePage="1250"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                <property
-                  containsID="true"
-                  dataType="System.String"
-                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[video_id]};#{Package\Small Facts table creation\Tag Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]};#{Package\Small Facts table creation\Data Conversion.Outputs[Data Conversion Error Output]};</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
-                  name="TreatDuplicateKeysAsError">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Small Facts table creation\Video Lookup.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-37TE795.biProject]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-37TE795.biProject]"
-                  description="Connection manager used to access lookup data."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Small Facts table creation\Video Lookup.Inputs[Lookup Input]"
-                  name="Lookup Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Small Facts table creation\Video Lookup.Inputs[Lookup Input].Columns[video_id]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="video_id"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[video_id]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">video_id</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Small Facts table creation\Video Lookup.Inputs[Lookup Input].Columns[title]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="1500"
-                      cachedName="title"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[title]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">title</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Small Facts table creation\Video Lookup.Inputs[Lookup Input].Columns[thumbnail_link]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="1500"
-                      cachedName="thumbnail_link"
-                      lineageId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output].Columns[thumbnail_link]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">thumbnail_link</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Small Facts table creation\Video Lookup.Outputs[Lookup Match Output]"
-                  errorOrTruncationOperation="Lookup"
-                  errorRowDisposition="FailComponent"
-                  exclusionGroup="1"
-                  name="Lookup Match Output"
-                  synchronousInputId="Package\Small Facts table creation\Video Lookup.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Small Facts table creation\Video Lookup.Outputs[Lookup Match Output].Columns[video_id]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Copy Column"
-                      length="1500"
-                      lineageId="Package\Small Facts table creation\Video Lookup.Outputs[Lookup Match Output].Columns[video_id]"
-                      name="video_id"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">video_id</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Small Facts table creation\Video Lookup.Outputs[Lookup Match Output].Columns[title]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Copy Column"
-                      length="1500"
-                      lineageId="Package\Small Facts table creation\Video Lookup.Outputs[Lookup Match Output].Columns[title]"
-                      name="title"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">title</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Small Facts table creation\Video Lookup.Outputs[Lookup Match Output].Columns[thumbnail_link]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Copy Column"
-                      length="1500"
-                      lineageId="Package\Small Facts table creation\Video Lookup.Outputs[Lookup Match Output].Columns[thumbnail_link]"
-                      name="thumbnail_link"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">thumbnail_link</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Small Facts table creation\Video Lookup.Outputs[Lookup No Match Output]"
-                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                  exclusionGroup="1"
-                  name="Lookup No Match Output"
-                  synchronousInputId="Package\Small Facts table creation\Video Lookup.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Small Facts table creation\Video Lookup.Outputs[Lookup Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Lookup Error Output"
-                  synchronousInputId="Package\Small Facts table creation\Video Lookup.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Small Facts table creation\Video Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Small Facts table creation\Video Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Small Facts table creation\Video Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Small Facts table creation\Video Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
           </components>
           <paths>
             <path
               refId="Package\Small Facts table creation.Paths[Data Conversion Output]"
-              endId="Package\Small Facts table creation\Video Lookup.Inputs[Lookup Input]"
+              endId="Package\Small Facts table creation\Lookup.Inputs[Lookup Input]"
               name="Data Conversion Output"
               startId="Package\Small Facts table creation\Data Conversion.Outputs[Data Conversion Output]" />
             <path
@@ -7662,19 +7582,19 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
               startId="Package\Small Facts table creation\Calendar Lookup.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Small Facts table creation.Paths[Lookup Match Output1]"
-              endId="Package\Small Facts table creation\Tag Lookup.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Small Facts table creation\Video Lookup.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Small Facts table creation.Paths[Lookup Match Output2]"
               endId="Package\Small Facts table creation\Calendar Lookup.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Small Facts table creation\Tag Lookup.Outputs[Lookup Match Output]" />
             <path
+              refId="Package\Small Facts table creation.Paths[Lookup Match Output2]"
+              endId="Package\Small Facts table creation\Tag Lookup.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Small Facts table creation\Lookup.Outputs[Lookup Match Output]" />
+            <path
               refId="Package\Small Facts table creation.Paths[OLE DB Source Output]"
               endId="Package\Small Facts table creation\Data Conversion.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
-              startId="Package\Small Facts table creation\Initial table.Outputs[OLE DB Source Output]" />
+              startId="Package\Small Facts table creation\OLE DB Source.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -7722,8 +7642,8 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 10]"
       DTS:CreationName=""
-      DTS:DTSID="{FE12699D-4AA9-4E8C-9A2A-FC5206E5DD62}"
-      DTS:From="Package\Big Facts table creation"
+      DTS:DTSID="{C2E29ED0-ACBF-4E05-9A4E-AF61EC447526}"
+      DTS:From="Package\tags chop chop first"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 10"
       DTS:To="Package\Small Facts table creation" />
@@ -7831,7 +7751,7 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
         <NodeLayout
           Size="156,41.6"
           Id="Package\Generates Dates"
-          TopLeft="548.571436891751,260.376473342341" />
+          TopLeft="548.571436891751,259.764708627879" />
         <NodeLayout
           Size="162.4,41.6"
           Id="Package\Get data from csv"
@@ -7880,30 +7800,30 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="626.571436891751,301.976473342341">
+          TopLeft="626.571436891751,301.364708627879">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-434.457149853998,77.3176496241745"
+              EndConnector="-434.457149853999,77.9294143386371"
               Start="0,0"
-              End="-434.457149853998,69.8176496241745">
+              End="-434.457149853999,70.4294143386371">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41.9669314203996" />
+                    End="0,42.3306381136555" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,41.9669314203996"
-                    Point2="0,45.9669314203996"
-                    Point3="-4,45.9669314203996" />
+                    Point1="0,42.3306381136555"
+                    Point2="0,46.3306381136555"
+                    Point3="-4,46.3306381136555" />
                   <mssgle:LineSegment
-                    End="-430.457149853998,45.9669314203996" />
+                    End="-430.457149853999,46.3306381136555" />
                   <mssgle:CubicBezierSegment
-                    Point1="-430.457149853998,45.9669314203996"
-                    Point2="-434.457149853998,45.9669314203996"
-                    Point3="-434.457149853998,49.9669314203996" />
+                    Point1="-430.457149853999,46.3306381136555"
+                    Point2="-434.457149853999,46.3306381136555"
+                    Point3="-434.457149853999,50.3306381136555" />
                   <mssgle:LineSegment
-                    End="-434.457149853998,69.8176496241745" />
+                    End="-434.457149853999,70.4294143386371" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7914,18 +7834,30 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="266.285715618912,578.258828750201">
+          TopLeft="187.085715550792,507.105886368273">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="137.257148355367,0"
+              EndConnector="316.057148423488,48.282353001235"
               Start="0,0"
-              End="129.757148355367,0">
+              End="316.057148423488,40.782353001235">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="129.757148355367,0" />
+                    End="0,15.5811764949453" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.5811764949453"
+                    Point2="0,19.5811764949453"
+                    Point3="4,19.5811764949453" />
+                  <mssgle:LineSegment
+                    End="312.057148423488,19.5811764949453" />
+                  <mssgle:CubicBezierSegment
+                    Point1="312.057148423488,19.5811764949453"
+                    Point2="316.057148423488,19.5811764949453"
+                    Point3="316.057148423488,23.5811764949453" />
+                  <mssgle:LineSegment
+                    End="316.057148423488,40.782353001235" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8006,26 +7938,26 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="426.609531526501,202.870590766326"
+              EndConnector="426.609531526501,202.258826051864"
               Start="0,0"
-              End="426.609531526501,195.370590766326">
+              End="426.609531526501,194.758826051864">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,77.9260149292766" />
+                    End="0,77.6789636196663" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,77.9260149292766"
-                    Point2="0,81.9260149292766"
-                    Point3="4,81.9260149292766" />
+                    Point1="0,77.6789636196663"
+                    Point2="0,81.6789636196663"
+                    Point3="4,81.6789636196663" />
                   <mssgle:LineSegment
-                    End="422.609531526501,81.9260149292766" />
+                    End="422.609531526501,81.6789636196663" />
                   <mssgle:CubicBezierSegment
-                    Point1="422.609531526501,81.9260149292766"
-                    Point2="426.609531526501,81.9260149292766"
-                    Point3="426.609531526501,85.9260149292766" />
+                    Point1="422.609531526501,81.6789636196663"
+                    Point2="426.609531526501,81.6789636196663"
+                    Point3="426.609531526501,85.6789636196663" />
                   <mssgle:LineSegment
-                    End="426.609531526501,195.370590766326" />
+                    End="426.609531526501,194.758826051864" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8183,6 +8115,10 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
           Id="Package\Big Facts table creation\Channel Lookup"
           TopLeft="207.885714528998,210.4" />
         <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Big Facts table creation\OLE DB Source"
+          TopLeft="5.60000000000001,8.00000000000001" />
+        <NodeLayout
           Size="156.8,41.6"
           Id="Package\Big Facts table creation\Calendar Lookup"
           TopLeft="212.685714528999,393.6" />
@@ -8191,31 +8127,31 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
           Id="Package\Big Facts table creation\Data Conversion"
           TopLeft="250.814288536383,17.9470571075756" />
         <EdgeLayout
-          Id="Package\Big Facts table creation.Paths[Data Conversion Output]"
-          TopLeft="328.414288536383,59.5470571075756">
+          Id="Package\Big Facts table creation.Paths[OLE DB Source Output]"
+          TopLeft="155.2,28.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-23.5571419521254,46.9470613374017"
+              EndConnector="95.6142885363831,9.94705710757559"
               Start="0,0"
-              End="-23.5571419521254,39.4470613374017">
+              End="88.1142885363831,9.94705710757559">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.4735306687009" />
+                    End="43.8071442681916,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.4735306687009"
-                    Point2="0,23.4735306687009"
-                    Point3="-4,23.4735306687009" />
+                    Point1="43.8071442681916,0"
+                    Point2="47.8071442681916,0"
+                    Point3="47.8071442681916,4" />
                   <mssgle:LineSegment
-                    End="-19.5571419521254,23.4735306687009" />
+                    End="47.8071442681916,5.94705710757559" />
                   <mssgle:CubicBezierSegment
-                    Point1="-19.5571419521254,23.4735306687009"
-                    Point2="-23.5571419521254,23.4735306687009"
-                    Point3="-23.5571419521254,27.4735306687009" />
+                    Point1="47.8071442681916,5.94705710757559"
+                    Point2="47.8071442681916,9.94705710757559"
+                    Point3="51.8071442681916,9.94705710757559" />
                   <mssgle:LineSegment
-                    End="-23.5571419521254,39.4470613374017" />
+                    End="88.1142885363831,9.94705710757559" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8344,36 +8280,32 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\Big Facts table creation\OLE DB Source"
-          TopLeft="5.60000000000001,8.00000000000001" />
         <EdgeLayout
-          Id="Package\Big Facts table creation.Paths[OLE DB Source Output]"
-          TopLeft="155.2,28.8">
+          Id="Package\Big Facts table creation.Paths[Data Conversion Output]"
+          TopLeft="328.414288536383,59.5470571075756">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="95.6142885363831,9.94705710757559"
+              EndConnector="-23.5571419521254,46.9470613374017"
               Start="0,0"
-              End="88.1142885363831,9.94705710757559">
+              End="-23.5571419521254,39.4470613374017">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="43.8071442681916,0" />
+                    End="0,19.4735306687009" />
                   <mssgle:CubicBezierSegment
-                    Point1="43.8071442681916,0"
-                    Point2="47.8071442681916,0"
-                    Point3="47.8071442681916,4" />
+                    Point1="0,19.4735306687009"
+                    Point2="0,23.4735306687009"
+                    Point3="-4,23.4735306687009" />
                   <mssgle:LineSegment
-                    End="47.8071442681916,5.94705710757559" />
+                    End="-19.5571419521254,23.4735306687009" />
                   <mssgle:CubicBezierSegment
-                    Point1="47.8071442681916,5.94705710757559"
-                    Point2="47.8071442681916,9.94705710757559"
-                    Point3="51.8071442681916,9.94705710757559" />
+                    Point1="-19.5571419521254,23.4735306687009"
+                    Point2="-23.5571419521254,23.4735306687009"
+                    Point3="-23.5571419521254,27.4735306687009" />
                   <mssgle:LineSegment
-                    End="88.1142885363831,9.94705710757559" />
+                    End="-23.5571419521254,39.4470613374017" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8468,6 +8400,19 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Big Facts table creation\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Big Facts table creation\Calendar Lookup">
     <Properties>
       <Property>
@@ -8500,25 +8445,21 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
           Id="Package\Dimensions creation\Union All"
           TopLeft="631.5,513.5" />
         <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\Dimensions creation\OLE DB Command"
-          TopLeft="466.1,411.9" />
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Dimensions creation\Derived Column 1"
-          TopLeft="610.3,614.226050407911" />
-        <NodeLayout
           Size="149.6,41.6"
           Id="Package\Dimensions creation\OLE DB Source 1"
           TopLeft="252.7,5.49999999999995" />
         <NodeLayout
+          Size="179.2,41.6"
+          Id="Package\Dimensions creation\OLE DB Destination 1"
+          TopLeft="216.457146516138,319.811768944288" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Dimensions creation\OLE DB Command"
+          TopLeft="466.1,411.9" />
+        <NodeLayout
           Size="128.8,41.6"
           Id="Package\Dimensions creation\Multicast 1"
           TopLeft="263.1,107.1" />
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Dimensions creation\Derived Column"
-          TopLeft="478.1,310.3" />
         <NodeLayout
           Size="154.4,41.6"
           Id="Package\Dimensions creation\Tags Table Dest"
@@ -8540,13 +8481,85 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
           Id="Package\Dimensions creation\OLE DB Source"
           TopLeft="835.7,513.5" />
         <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Dimensions creation\Derived Column 1"
+          TopLeft="610.3,614.226050407911" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Dimensions creation\OLE DB Destination"
+          TopLeft="19.3142860159582,331.435298519069" />
+        <NodeLayout
           Size="97.6,41.6"
           Id="Package\Dimensions creation\Sort"
           TopLeft="861.7,615.099999999999" />
         <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Dimensions creation\Derived Column"
+          TopLeft="478.1,310.3" />
+        <NodeLayout
           Size="160.8,41.6"
           Id="Package\Dimensions creation\Video Destination"
           TopLeft="609.483673455486,716.699999999999" />
+        <EdgeLayout
+          Id="Package\Dimensions creation.Paths[Sort Output1]"
+          TopLeft="160.5,250.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-55.9857139840418,81.1352985190686"
+              Start="0,0"
+              End="-55.9857139840418,73.6352985190686">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5676492595343" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36.5676492595343"
+                    Point2="0,40.5676492595343"
+                    Point3="-4,40.5676492595343" />
+                  <mssgle:LineSegment
+                    End="-51.9857139840418,40.5676492595343" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-51.9857139840418,40.5676492595343"
+                    Point2="-55.9857139840418,40.5676492595343"
+                    Point3="-55.9857139840418,44.5676492595343" />
+                  <mssgle:LineSegment
+                    End="-55.9857139840418,73.6352985190686" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dimensions creation.Paths[Sort Output]"
+          TopLeft="910.5,656.699999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Dimensions creation.Paths[OLE DB Source Output1]"
           TopLeft="910.5,555.1">
@@ -8566,7 +8579,9 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8588,7 +8603,9 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8622,7 +8639,9 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8692,7 +8711,9 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8726,7 +8747,9 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8748,7 +8771,9 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8806,7 +8831,9 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8828,7 +8855,9 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8850,71 +8879,9 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dimensions creation.Paths[Sort Output]"
-          TopLeft="910.5,656.699999999999">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Dimensions creation\OLE DB Destination"
-          TopLeft="19.3142860159582,331.435298519069" />
-        <NodeLayout
-          Size="179.2,41.6"
-          Id="Package\Dimensions creation\OLE DB Destination 1"
-          TopLeft="216.457146516138,319.811768944288" />
-        <EdgeLayout
-          Id="Package\Dimensions creation.Paths[Sort Output1]"
-          TopLeft="160.5,250.3">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-55.9857139840418,81.1352985190686"
-              Start="0,0"
-              End="-55.9857139840418,73.6352985190686">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.5676492595343" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,36.5676492595343"
-                    Point2="0,40.5676492595343"
-                    Point3="-4,40.5676492595343" />
-                  <mssgle:LineSegment
-                    End="-51.9857139840418,40.5676492595343" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-51.9857139840418,40.5676492595343"
-                    Point2="-55.9857139840418,40.5676492595343"
-                    Point3="-55.9857139840418,44.5676492595343" />
-                  <mssgle:LineSegment
-                    End="-55.9857139840418,73.6352985190686" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8948,7 +8915,9 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8956,6 +8925,19 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Dimensions creation\OLE DB Source 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimensions creation\OLE DB Destination 1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -9034,6 +9016,19 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Dimensions creation\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimensions creation\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -9169,6 +9164,10 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="228,41.6"
+          Id="Package\Small Facts table creation\Video - tags mapping Fact table"
+          TopLeft="425.371430079791,639.905882721871" />
+        <NodeLayout
           Size="155.2,41.6"
           Id="Package\Small Facts table creation\Data Conversion"
           TopLeft="481.900004087176,179.452939829447" />
@@ -9177,47 +9176,89 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
           Id="Package\Small Facts table creation\Tag Lookup"
           TopLeft="287.771430079791,371.905882721871" />
         <NodeLayout
-          Size="141.6,41.6"
-          Id="Package\Small Facts table creation\Video Lookup"
-          TopLeft="465.14286213505,268.000001166849" />
-        <NodeLayout
-          Size="131.2,41.6"
-          Id="Package\Small Facts table creation\Initial table"
-          TopLeft="248,173.6" />
+          Size="112.8,41.6"
+          Id="Package\Small Facts table creation\Lookup"
+          TopLeft="380.8,266.4" />
         <NodeLayout
           Size="156.8,41.6"
           Id="Package\Small Facts table creation\Calendar Lookup"
           TopLeft="443.771430079791,555.105882721871" />
         <NodeLayout
-          Size="228,41.6"
-          Id="Package\Small Facts table creation\Video - tags mapping Fact table"
-          TopLeft="425.371430079791,639.905882721871" />
+          Size="149.6,41.6"
+          Id="Package\Small Facts table creation\OLE DB Source"
+          TopLeft="219.2,128" />
         <EdgeLayout
           Id="Package\Small Facts table creation.Paths[OLE DB Source Output]"
-          TopLeft="379.2,197.326469914723">
+          TopLeft="368.8,148.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="102.700004087176,0"
+              EndConnector="113.100004087176,51.452939829447"
               Start="0,0"
-              End="95.2000040871756,0">
+              End="105.600004087176,51.452939829447">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="95.2000040871756,0" />
+                    End="52.5500020435879,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="52.5500020435879,0"
+                    Point2="56.5500020435879,0"
+                    Point3="56.5500020435879,4" />
+                  <mssgle:LineSegment
+                    End="56.5500020435879,47.452939829447" />
+                  <mssgle:CubicBezierSegment
+                    Point1="56.5500020435879,47.452939829447"
+                    Point2="56.5500020435879,51.452939829447"
+                    Point3="60.5500020435879,51.452939829447" />
+                  <mssgle:LineSegment
+                    End="105.600004087176,51.452939829447" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Small Facts table creation.Paths[Lookup Match Output2]"
+          TopLeft="437.2,308">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-82.628569920209,63.905882721871"
+              Start="0,0"
+              End="-82.628569920209,56.405882721871">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.9529413609355" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.9529413609355"
+                    Point2="0,31.9529413609355"
+                    Point3="-4,31.9529413609355" />
+                  <mssgle:LineSegment
+                    End="-78.628569920209,31.9529413609355" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-78.628569920209,31.9529413609355"
+                    Point2="-82.628569920209,31.9529413609355"
+                    Point3="-82.628569920209,35.9529413609355" />
+                  <mssgle:LineSegment
+                    End="-82.628569920209,56.405882721871" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-89.5056716788545,36.9529413609355,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Small Facts table creation.Paths[Lookup Match Output2]"
+          Id="Package\Small Facts table creation.Paths[Lookup Match Output1]"
           TopLeft="354.571430079791,413.505882721871">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9249,42 +9290,6 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="35.60861328125,75.8,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Small Facts table creation.Paths[Lookup Match Output1]"
-          TopLeft="535.94286213505,309.600001166849">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-181.371432055259,62.3058815550224"
-              Start="0,0"
-              End="-181.371432055259,54.8058815550224">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.1529407775112" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,27.1529407775112"
-                    Point2="0,31.1529407775112"
-                    Point3="-4,31.1529407775112" />
-                  <mssgle:LineSegment
-                    End="-177.371432055259,31.1529407775112" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-177.371432055259,31.1529407775112"
-                    Point2="-181.371432055259,31.1529407775112"
-                    Point3="-181.371432055259,35.1529407775112" />
-                  <mssgle:LineSegment
-                    End="-181.371432055259,54.8058815550224" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-138.87710274638,36.1529407775112,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -9330,39 +9335,50 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-23.5571419521254,46.9470613374017"
+              EndConnector="-122.300004087176,45.3470601705531"
               Start="0,0"
-              End="-23.5571419521254,39.4470613374017">
+              End="-122.300004087176,37.8470601705531">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.4735306687009" />
+                    End="0,18.6735300852765" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.4735306687009"
-                    Point2="0,23.4735306687009"
-                    Point3="-4,23.4735306687009" />
+                    Point1="0,18.6735300852765"
+                    Point2="0,22.6735300852765"
+                    Point3="-4,22.6735300852765" />
                   <mssgle:LineSegment
-                    End="-19.5571419521254,23.4735306687009" />
+                    End="-118.300004087176,22.6735300852765" />
                   <mssgle:CubicBezierSegment
-                    Point1="-19.5571419521254,23.4735306687009"
-                    Point2="-23.5571419521254,23.4735306687009"
-                    Point3="-23.5571419521254,27.4735306687009" />
+                    Point1="-118.300004087176,22.6735300852765"
+                    Point2="-122.300004087176,22.6735300852765"
+                    Point3="-122.300004087176,26.6735300852765" />
                   <mssgle:LineSegment
-                    End="-23.5571419521254,39.4470613374017" />
+                    End="-122.300004087176,37.8470601705531" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Small Facts table creation\Video - tags mapping Fact table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Small Facts table creation\Tag Lookup">
     <Properties>
@@ -9387,46 +9403,30 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Small Facts table creation\Video - tags mapping Fact table">
+    design-time-name="Package\Small Facts table creation\Lookup">
     <Properties>
       <Property>
-        <Name>DataSourceViewID</Name>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Video]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q2:string">Table</Value>
+          type="q4:string">0</Value>
       </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Dimensions creation\OLE DB Destination">
-    <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Dimensions creation\OLE DB Destination 1">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Big Facts table creation\OLE DB Source">
+    design-time-name="Package\Small Facts table creation\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
