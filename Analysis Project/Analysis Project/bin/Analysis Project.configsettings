@@ -1,0 +1,130 @@
+﻿<ConfigurationSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Database>
+    <DataSources>
+      <DataSource>
+        <ID>Bi Project</ID>
+        <ConnectionString>Provider=SQLNCLI11.1;Data Source=DESKTOP-37TE795;Integrated Security=SSPI;Initial Catalog=biProject</ConnectionString>
+        <ImpersonationInfo>
+          <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">ImpersonateServiceAccount</ImpersonationMode>
+          <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Unchanged</ImpersonationInfoSecurity>
+        </ImpersonationInfo>
+      </DataSource>
+    </DataSources>
+    <Dimensions>
+      <Dimension>
+        <ID>Calendar</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Channel</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Disabled</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Tags</ID>
+      </Dimension>
+      <Dimension>
+        <ID>U Scategory</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Video</ID>
+      </Dimension>
+    </Dimensions>
+    <Cubes>
+      <Cube>
+        <ID>Bi Project</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>Calendar</ID>
+            <Partitions>
+              <Partition>
+                <ID>Calendar</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Facts</ID>
+            <Partitions>
+              <Partition>
+                <ID>Facts</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Tags</ID>
+            <Partitions>
+              <Partition>
+                <ID>Tags</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Video</ID>
+            <Partitions>
+              <Partition>
+                <ID>Video</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+      <Cube>
+        <ID>Bi Project 1</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>Calendar</ID>
+            <Partitions>
+              <Partition>
+                <ID>Calendar</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Channel</ID>
+            <Partitions>
+              <Partition>
+                <ID>Channel</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Disabled</ID>
+            <Partitions>
+              <Partition>
+                <ID>Disabled</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Num Facts</ID>
+            <Partitions>
+              <Partition>
+                <ID>Num Facts</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>U Scategory</ID>
+            <Partitions>
+              <Partition>
+                <ID>U Scategory</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Video</ID>
+            <Partitions>
+              <Partition>
+                <ID>Video</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+    </Cubes>
+    <DataSourceImpersonationInfo>
+      <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Default</ImpersonationMode>
+      <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Unchanged</ImpersonationInfoSecurity>
+    </DataSourceImpersonationInfo>
+  </Database>
+</ConfigurationSettings>

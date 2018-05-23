@@ -1,0 +1,103 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>Analysis Project</Database>
+    <Server>DESKTOP-37TE795\ANALYSISSERVER</Server>
+    <ConnectionString>Data Source=DESKTOP-37TE795\ANALYSISSERVER;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>hjD4TiNaw/iSC+emSE9TpoX3Tac=23.05.2018 15:47:0323.05.2018 15:47:03</TimeStamp>
+        <ID>
+          <String>Bi Project</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>ZUtNHFiG+0NvrMGFzSbPVNx1N10=23.05.2018 15:51:2523.05.2018 15:47:57</TimeStamp>
+        <ID>
+          <String>Bi Project</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>Qs7aQSpxA1NTde7GwFdZ7DWcico=23.05.2018 17:56:0223.05.2018 17:29:37</TimeStamp>
+        <ID>
+          <String>Calendar</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>EUnB5m3b5LuLV036pKwKX4zLrAA=23.05.2018 17:32:2023.05.2018 17:32:20</TimeStamp>
+        <ID>
+          <String>Channel</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>rAu+MvXFYhcgCJS0BOq3YNhB8Dg=23.05.2018 17:32:3323.05.2018 17:32:33</TimeStamp>
+        <ID>
+          <String>Disabled</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>fc2p6NyTXvJ/LRI2xiTzQ60LA/8=23.05.2018 18:08:0523.05.2018 17:32:47</TimeStamp>
+        <ID>
+          <String>Tags</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>v7P6pzKXOk3O3DJygV3AnHrxEMM=23.05.2018 17:33:0123.05.2018 17:33:01</TimeStamp>
+        <ID>
+          <String>U Scategory</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>MbaBXpnnqEaPJp7S2NN0n0h/mpQ=23.05.2018 17:56:0223.05.2018 17:33:14</TimeStamp>
+        <ID>
+          <String>Video</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>w3DSzWWzbE6SeW8+metWwp8A7TQ=23.05.2018 17:46:3823.05.2018 17:33:36CkjHJ33DGD4yHUPggK2rza2NXNI=23.05.2018 17:33:3623.05.2018 17:33:36</TimeStamp>
+        <ID>
+          <String>Bi Project</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>y8cRe3/AO4aaGu25OvugGqdKteI=23.05.2018 17:46:3923.05.2018 17:43:121MrMmeh0J3KqaoYjoUZRh34/NMw=23.05.2018 17:43:1223.05.2018 17:43:12</TimeStamp>
+        <ID>
+          <String>Bi Project 1</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>DxiUaV79lHqxJ51Dgh+0SeQAyow=23.05.2018 15:46:2323.05.2018 15:46:23</TimeStamp>
+      <ID>
+        <String>Analysis Project</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2018-05-23T15:11:20.203333Z</LastDeployed>
+</DeploymentSnapshot>

@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="205"
-  DTS:VersionGUID="{7DC51315-D7C5-4B70-A4D2-E5D90D072397}">
+  DTS:VersionBuild="206"
+  DTS:VersionGUID="{2FA33832-0B1E-4EC8-972A-443BEE351C6C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -538,7 +538,7 @@ where [refTable].[channel_title] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Big Facts table creation\493:invalid};</property>
+                  name="ParameterMap">#{Package\Big Facts table creation\488:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -775,7 +775,7 @@ where [refTable].[comments_disabled] = ? and [refTable].[ratings_disabled] = ? a
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Big Facts table creation\494:invalid};#{Package\Big Facts table creation\495:invalid};#{Package\Big Facts table creation\496:invalid};</property>
+                  name="ParameterMap">#{Package\Big Facts table creation\489:invalid};#{Package\Big Facts table creation\490:invalid};#{Package\Big Facts table creation\491:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -7328,7 +7328,7 @@ where [refTable].[tag] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Small Facts table creation\497:invalid};</property>
+                  name="ParameterMap">#{Package\Small Facts table creation\492:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
