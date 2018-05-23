@@ -12,120 +12,48 @@
     </DataSources>
     <Dimensions>
       <Dimension>
-        <ID>Facts</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Tags</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Num Facts</ID>
-      </Dimension>
-      <Dimension>
         <ID>Calendar</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Disabled</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Channel</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Calendar 1</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Channel 1</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Disabled 1</ID>
       </Dimension>
       <Dimension>
         <ID>Video</ID>
       </Dimension>
       <Dimension>
+        <ID>Tags</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Calendar 1</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Channel</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Disabled</ID>
+      </Dimension>
+      <Dimension>
         <ID>U Scategory</ID>
       </Dimension>
       <Dimension>
-        <ID>U Scategory 1</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Video 1</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Disabled 2</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Channel 2</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Calendar 2</ID>
+        <ID>Num Facts</ID>
       </Dimension>
       <Dimension>
         <ID>Tags 1</ID>
       </Dimension>
       <Dimension>
-        <ID>Video 2</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Calendar 3</ID>
+        <ID>Video 1</ID>
       </Dimension>
     </Dimensions>
     <Cubes>
       <Cube>
-        <ID>Bi Project 1</ID>
+        <ID>Bi Project</ID>
         <MeasureGroups>
           <MeasureGroup>
-            <ID>Num Facts</ID>
+            <ID>Facts</ID>
             <Partitions>
               <Partition>
-                <ID>Num Facts</ID>
+                <ID>Facts</ID>
               </Partition>
             </Partitions>
           </MeasureGroup>
-          <MeasureGroup>
-            <ID>U Scategory</ID>
-            <Partitions>
-              <Partition>
-                <ID>U Scategory</ID>
-              </Partition>
-            </Partitions>
-          </MeasureGroup>
-          <MeasureGroup>
-            <ID>Video</ID>
-            <Partitions>
-              <Partition>
-                <ID>Video</ID>
-              </Partition>
-            </Partitions>
-          </MeasureGroup>
-          <MeasureGroup>
-            <ID>Disabled</ID>
-            <Partitions>
-              <Partition>
-                <ID>Disabled</ID>
-              </Partition>
-            </Partitions>
-          </MeasureGroup>
-          <MeasureGroup>
-            <ID>Channel</ID>
-            <Partitions>
-              <Partition>
-                <ID>Channel</ID>
-              </Partition>
-            </Partitions>
-          </MeasureGroup>
-          <MeasureGroup>
-            <ID>Calendar</ID>
-            <Partitions>
-              <Partition>
-                <ID>Calendar</ID>
-              </Partition>
-            </Partitions>
-          </MeasureGroup>
-        </MeasureGroups>
-      </Cube>
-      <Cube>
-        <ID>tagsCube</ID>
-        <MeasureGroups>
           <MeasureGroup>
             <ID>Tags</ID>
             <Partitions>
@@ -143,18 +71,71 @@
             </Partitions>
           </MeasureGroup>
           <MeasureGroup>
-            <ID>Facts</ID>
+            <ID>Calendar</ID>
             <Partitions>
               <Partition>
-                <ID>Facts</ID>
+                <ID>Calendar</ID>
               </Partition>
             </Partitions>
           </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+      <Cube>
+        <ID>Bi Project 1</ID>
+        <MeasureGroups>
           <MeasureGroup>
             <ID>Calendar</ID>
             <Partitions>
               <Partition>
                 <ID>Calendar</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Channel</ID>
+            <Partitions>
+              <Partition>
+                <ID>Channel</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Disabled</ID>
+            <Partitions>
+              <Partition>
+                <ID>Disabled</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Num Facts</ID>
+            <Partitions>
+              <Partition>
+                <ID>Num Facts</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Tags</ID>
+            <Partitions>
+              <Partition>
+                <ID>Tags</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>U Scategory</ID>
+            <Partitions>
+              <Partition>
+                <ID>U Scategory</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Video</ID>
+            <Partitions>
+              <Partition>
+                <ID>Video</ID>
               </Partition>
             </Partitions>
           </MeasureGroup>

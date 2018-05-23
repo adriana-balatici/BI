@@ -3,10 +3,20 @@
   <SchemaVersion>9.0.2.10</SchemaVersion>
   <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkZGwzMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAiIHhtbG5zOmRkbDMwMF8zMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAvMzAwIiB4bWxuczpkZGw0MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAiIHhtbG5zOmRkbDQwMF80MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAvNDAwIiB4bWxuczpkZGw1MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAiIHhtbG5zOmRkbDUwMF81MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAvNTAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
   <Database>
-    <Name>AnalysisProject.database</Name>
-    <FullPath>AnalysisProject.database</FullPath>
+    <Name>MultidimensionalProject1.database</Name>
+    <FullPath>MultidimensionalProject1.database</FullPath>
   </Database>
   <Cubes>
+    <ProjectItem>
+      <Name>Bi Project.cube</Name>
+      <FullPath>Bi Project.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>Bi Project.partitions</Name>
+          <FullPath>Bi Project.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
     <ProjectItem>
       <Name>Bi Project 1.cube</Name>
       <FullPath>Bi Project 1.cube</FullPath>
@@ -17,93 +27,47 @@
         </ProjectItem>
       </Dependencies>
     </ProjectItem>
-    <ProjectItem>
-      <Name>tagsCube.cube</Name>
-      <FullPath>tagsCube.cube</FullPath>
-      <Dependencies>
-        <ProjectItem>
-          <Name>tagsCube.partitions</Name>
-          <FullPath>tagsCube.partitions</FullPath>
-        </ProjectItem>
-      </Dependencies>
-    </ProjectItem>
   </Cubes>
   <Dimensions>
     <ProjectItem>
-      <Name>Facts.dim</Name>
-      <FullPath>Facts.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Tags.dim</Name>
-      <FullPath>Tags.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Num Facts.dim</Name>
-      <FullPath>Num Facts.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
       <Name>Calendar.dim</Name>
       <FullPath>Calendar.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Disabled.dim</Name>
-      <FullPath>Disabled.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Channel.dim</Name>
-      <FullPath>Channel.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Calendar 1.dim</Name>
-      <FullPath>Calendar 1.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Channel 1.dim</Name>
-      <FullPath>Channel 1.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Disabled 1.dim</Name>
-      <FullPath>Disabled 1.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>Video.dim</Name>
       <FullPath>Video.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
+      <Name>Tags.dim</Name>
+      <FullPath>Tags.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Calendar 1.dim</Name>
+      <FullPath>Calendar 1.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Channel.dim</Name>
+      <FullPath>Channel.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Disabled.dim</Name>
+      <FullPath>Disabled.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>U Scategory.dim</Name>
       <FullPath>U Scategory.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>U Scategory 1.dim</Name>
-      <FullPath>U Scategory 1.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Video 1.dim</Name>
-      <FullPath>Video 1.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Disabled 2.dim</Name>
-      <FullPath>Disabled 2.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Channel 2.dim</Name>
-      <FullPath>Channel 2.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Calendar 2.dim</Name>
-      <FullPath>Calendar 2.dim</FullPath>
+      <Name>Num Facts.dim</Name>
+      <FullPath>Num Facts.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>Tags 1.dim</Name>
       <FullPath>Tags 1.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Video 2.dim</Name>
-      <FullPath>Video 2.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Calendar 3.dim</Name>
-      <FullPath>Calendar 3.dim</FullPath>
+      <Name>Video 1.dim</Name>
+      <FullPath>Video 1.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>
