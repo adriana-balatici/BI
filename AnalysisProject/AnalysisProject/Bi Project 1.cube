@@ -1,0 +1,371 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="85e39ed8-500b-446b-b12e-fc54a6e63145" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Bi Project 1</ID>
+  <Name>Bi Project 1</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="cebba963-a8ac-427f-bcee-9cbb0bfa4145">
+      <ID>Disabled</ID>
+      <Name>Disabled</Name>
+      <DimensionID>Disabled</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="9ffe3d02-a5d2-49e3-b42e-2567ff0f9921">
+          <AttributeID>Id</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="fec8b098-0829-4d66-bb1c-2397ec035e63">
+      <ID>Channel</ID>
+      <Name>Channel</Name>
+      <DimensionID>Channel</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="d49d2246-75f2-494b-9dbe-56e85641159c">
+          <AttributeID>Id</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="56fe3437-6f9f-4215-8b5c-0cfc6eb40669">
+      <ID>Calendar</ID>
+      <Name>Calendar</Name>
+      <DimensionID>Calendar</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="616b6f27-2abb-4bdf-b041-cbc41d04aa8a">
+          <AttributeID>Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="86daecd6-ad59-4ce7-a9c3-5caedd6207b0">
+          <AttributeID>Day</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4d587156-a9f3-4748-bcc4-a47db6223b58">
+          <AttributeID>Week</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="6749062a-bf9e-4027-9992-93e061a33353">
+          <AttributeID>Month</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="fd447986-e776-46e8-a12b-71e483ed1f49">
+          <AttributeID>Quarter</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4a766b30-61b1-4f44-a7ee-10b123a5e952">
+          <AttributeID>Year</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="359d88ae-eabc-4cca-899e-5bc4957acacf">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="3575eae6-7e4d-4b9e-ba2c-08e17dcd7ada">
+      <ID>Num Facts</ID>
+      <Name>Num Facts</Name>
+      <DimensionID>Num Facts</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="6ffefac1-b10b-4a5e-80e9-073060a00577">
+          <AttributeID>Vid Id</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="a99709b4-3f9b-4fba-b0fc-471fedee9aec">
+      <ID>Video</ID>
+      <Name>Video</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="b7732e26-a352-433f-a5a9-ce8ea00b167e">
+          <ID>Video Count</ID>
+          <Name>Video Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="c95e194a-f92a-4f5c-ab3e-e8b6bb1609fd">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="e3bc6a57-0432-49db-bd9a-8e5beed570dd">
+              <TableID>dbo_Video</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="83afb88f-e06d-4806-a061-68256b16b432">
+          <CubeDimensionID>Num Facts</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="aa12a490-309a-4842-99dc-edf599f6a315">
+              <AttributeID>Vid Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="f0db9767-ff9e-4615-b427-38a00405e0c6">
+                  <DataType>WChar</DataType>
+                  <DataSize>1024</DataSize>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="fc6ece8b-9daa-43ee-bfd0-6997d5cd9943">
+                    <TableID>dbo_Video</TableID>
+                    <ColumnID>video_id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="464ad7b5-e671-4d2a-9e9b-9747cc3320be">
+      <ID>Disabled</ID>
+      <Name>Disabled</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="d5f92cd9-5920-4d48-a6b5-d19136119a43">
+          <ID>Disabled Count</ID>
+          <Name>Disabled Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="ef102f90-ef99-4ade-9546-cfba313a0dd2">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="8fd9a446-f7e5-49dd-b3e2-5ddc87a9613c">
+              <TableID>dbo_Disabled</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="1803d087-4e7d-4bb2-8e9e-1c1ac92c252a">
+          <CubeDimensionID>Disabled</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="eda07a1c-8410-41f2-89a9-b9e959469456">
+              <AttributeID>Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="308f8e74-2cb0-47d3-b41b-47d35269ae2e">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e8ca2812-0967-404c-98e6-e49b4b5d4ac9">
+                    <TableID>dbo_Disabled</TableID>
+                    <ColumnID>id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="371e6739-3bda-430d-adbd-66444ed7afce">
+      <ID>Channel</ID>
+      <Name>Channel</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="570c1918-5d39-4cae-86ce-33202bdc82c1">
+          <ID>Channel Count</ID>
+          <Name>Channel Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="d84684db-86c6-4713-8bdf-1cc029c5a74f">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="0a01fce6-8650-4962-ae02-eb7beb582b1b">
+              <TableID>dbo_Channel</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="ef043f66-0521-4ae6-94ad-a8a58a5e95af">
+          <CubeDimensionID>Channel</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="aa380e1f-2c68-4e7f-8d99-fbbce2e69fa7">
+              <AttributeID>Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="4aeb0c72-6c82-4094-9255-d259175b329b">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="6aea2b10-1bd3-4617-9062-304d79bf8da8">
+                    <TableID>dbo_Channel</TableID>
+                    <ColumnID>id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="ec50c711-829b-4ff4-9d89-4c6aac4a92ed">
+      <ID>Calendar</ID>
+      <Name>Calendar</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="55b14ceb-9cae-4f97-b1b3-d7d5f4e83267">
+          <ID>Day</ID>
+          <Name>Day</Name>
+          <Source dwd:design-time-name="db8cfb1a-f557-46b9-b58f-30318ad03683">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="07180959-6926-48b0-9ef3-ec26132188c3">
+              <TableID>dbo_Calendar</TableID>
+              <ColumnID>day</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="353045e1-2ded-42d5-8804-44bcf7d91099">
+          <ID>Month</ID>
+          <Name>Month</Name>
+          <Source dwd:design-time-name="ab97ba05-d3af-4e3b-8fa9-c19e8563f5d9">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="956e3ea7-0ebd-4d5b-b8e5-45111a099c6c">
+              <TableID>dbo_Calendar</TableID>
+              <ColumnID>month</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="b8391917-a3e8-4c7d-a381-a823eb17017e">
+          <ID>Week</ID>
+          <Name>Week</Name>
+          <Source dwd:design-time-name="7ec38b57-d3a0-4f7c-b616-a7e2f87d7aa4">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="284d0f5d-13e9-40bd-9734-271573ff2b87">
+              <TableID>dbo_Calendar</TableID>
+              <ColumnID>week</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="2985070e-9124-4831-852d-8972315257a5">
+          <ID>IS Oweek</ID>
+          <Name>IS Oweek</Name>
+          <Source dwd:design-time-name="3276f741-7aa6-444c-b2a5-9f65517152d5">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="71333066-7cb5-481f-b3a8-12450e15cf24">
+              <TableID>dbo_Calendar</TableID>
+              <ColumnID>ISOweek</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="adfa11d5-2fdb-4e2e-b4f9-5dceafbba293">
+          <ID>Day Of Week</ID>
+          <Name>Day Of Week</Name>
+          <Source dwd:design-time-name="f697aeae-d50c-43de-9533-0a04fbd06398">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="4e2c68b9-636f-4c8c-af85-745b5e8c9018">
+              <TableID>dbo_Calendar</TableID>
+              <ColumnID>DayOfWeek</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="59c1a003-d769-446a-b94d-599bdbc1abfb">
+          <ID>Quarter</ID>
+          <Name>Quarter</Name>
+          <Source dwd:design-time-name="a8336cb0-1854-4fe4-9e81-28ecf4b8746c">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="f8dd14d3-448f-4104-8bcc-5ce5debc6d31">
+              <TableID>dbo_Calendar</TableID>
+              <ColumnID>quarter</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="7177acf6-e347-4e07-a808-b493bfe38503">
+          <ID>Year</ID>
+          <Name>Year</Name>
+          <Source dwd:design-time-name="18a35515-5eb2-4200-a347-3accf4308f80">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="9a24cb4b-0a04-4119-a3c5-33ec291e13a6">
+              <TableID>dbo_Calendar</TableID>
+              <ColumnID>year</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="0d764c1e-eaf0-4425-b41e-be6a2bee82b0">
+          <ID>Calendar Count</ID>
+          <Name>Calendar Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="c6eafa54-b690-48a0-bdce-3d82d462f12b">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="746dc0b7-916c-422d-a816-900bc49a8584">
+              <TableID>dbo_Calendar</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="6334bb02-0b2e-42a8-84f9-bc0bb06cde3c">
+          <CubeDimensionID>Calendar</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="fc661ec5-4d5b-4aca-bde6-cdff328f5a4c">
+              <AttributeID>Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="7907ad40-60d0-42aa-a728-35b5eb9fe025">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="38d64527-3753-4610-9da6-6af347dbc9ca">
+                    <TableID>dbo_Calendar</TableID>
+                    <ColumnID>id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="0a4d2943-ca8c-45f0-95f4-ffdfb052709b">
+    <DataSourceViewID>Bi Project</DataSourceViewID>
+  </Source>
+</Cube>

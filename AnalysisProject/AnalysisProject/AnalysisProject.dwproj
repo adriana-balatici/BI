@@ -6,20 +6,66 @@
     <Name>AnalysisProject.database</Name>
     <FullPath>AnalysisProject.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>Bi Project.cube</Name>
+      <FullPath>Bi Project.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>Bi Project.partitions</Name>
+          <FullPath>Bi Project.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Bi Project 1.cube</Name>
+      <FullPath>Bi Project 1.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>Bi Project 1.partitions</Name>
+          <FullPath>Bi Project 1.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
+  <Dimensions>
+    <ProjectItem>
+      <Name>Facts.dim</Name>
+      <FullPath>Facts.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Tags.dim</Name>
+      <FullPath>Tags.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Num Facts.dim</Name>
+      <FullPath>Num Facts.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Calendar.dim</Name>
+      <FullPath>Calendar.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Disabled.dim</Name>
+      <FullPath>Disabled.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Channel.dim</Name>
+      <FullPath>Channel.dim</FullPath>
+    </ProjectItem>
+  </Dimensions>
   <DataSources>
     <ProjectItem>
       <Name>Bi Project.ds</Name>
       <FullPath>Bi Project.ds</FullPath>
     </ProjectItem>
-    <ProjectItem>
-      <Name>Bi Project 1.ds</Name>
-      <FullPath>Bi Project 1.ds</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Bi Project 2.ds</Name>
-      <FullPath>Bi Project 2.ds</FullPath>
-    </ProjectItem>
   </DataSources>
+  <DataSourceViews>
+    <ProjectItem>
+      <Name>Bi Project.dsv</Name>
+      <FullPath>Bi Project.dsv</FullPath>
+    </ProjectItem>
+  </DataSourceViews>
   <Configurations>
     <Configuration>
       <Name>Development</Name>
@@ -28,33 +74,13 @@
           <ConfigurationSetting>
             <Id>Bi Project</Id>
             <Name>Bi Project</Name>
-            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=DESKTOP-37TE795;Integrated Security=SSPI;Initial Catalog=biProject</Value>
-          </ConfigurationSetting>
-          <ConfigurationSetting>
-            <Id>Bi Project 1</Id>
-            <Name>Bi Project 1</Name>
-            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=DESKTOP-37TE795;Integrated Security=SSPI;Initial Catalog=biProject</Value>
-          </ConfigurationSetting>
-          <ConfigurationSetting>
-            <Id>Bi Project 2</Id>
-            <Name>Bi Project 2</Name>
-            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=DESKTOP-37TE795;Integrated Security=SSPI;Initial Catalog=biProject</Value>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=DESKTOP-37TE795\ANALYSISSERVER;Integrated Security=SSPI;Initial Catalog=biProject</Value>
           </ConfigurationSetting>
         </ConnectionMappings>
         <ConnectionSecurityMappings>
           <ConfigurationSetting>
             <Id>Bi Project</Id>
             <Name>Bi Project</Name>
-            <Value xsi:type="xsd:int">0</Value>
-          </ConfigurationSetting>
-          <ConfigurationSetting>
-            <Id>Bi Project 1</Id>
-            <Name>Bi Project 1</Name>
-            <Value xsi:type="xsd:int">0</Value>
-          </ConfigurationSetting>
-          <ConfigurationSetting>
-            <Id>Bi Project 2</Id>
-            <Name>Bi Project 2</Name>
             <Value xsi:type="xsd:int">0</Value>
           </ConfigurationSetting>
         </ConnectionSecurityMappings>

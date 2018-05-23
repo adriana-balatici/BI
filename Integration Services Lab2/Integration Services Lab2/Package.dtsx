@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="204"
-  DTS:VersionGUID="{BE292ADA-6B64-497C-A0B0-297CE86E0915}">
+  DTS:VersionBuild="205"
+  DTS:VersionGUID="{7DC51315-D7C5-4B70-A4D2-E5D90D072397}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1803,7 +1803,7 @@ where [refTable].[video_id] = ? and [refTable].[title] = ? and [refTable].[thumb
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{BC0CEBB8-BD04-4F0F-80EE-1A4986A3D12B}"
-          SQLTask:SqlStatementSource="truncate table [dbo].[Channel];&#xA;truncate table [dbo].[AllTags3];&#xA;truncate table [dbo].[Tags];&#xA;drop table [dbo].[Calendar]&#xA;truncate table [dbo].[Disabled];&#xA;truncate table [dbo].[UScategory];&#xA;truncate table [dbo].[USvideos];&#xA;truncate table [dbo].[USvideos_copie];&#xA;truncate table [dbo].[Video];&#xA;truncate table [dbo].[Fact];"
+          SQLTask:SqlStatementSource="truncate table [dbo].[Channel];&#xA;truncate table [dbo].[AllTags3];&#xA;truncate table [dbo].[Tags];&#xA;drop table [dbo].[Calendar]&#xA;truncate table [dbo].[Disabled];&#xA;truncate table [dbo].[UScategory];&#xA;truncate table [dbo].[USvideos];&#xA;truncate table [dbo].[NumFacts];&#xA;truncate table [dbo].[Video];&#xA;truncate table [dbo].[Facts];"
           SQLTask:ServerVersion="9"
           SQLTask:ExtendedLogging="True"
           SQLTask:LocalConnectionForLogging=""
@@ -8127,42 +8127,6 @@ where [refTable].[tag] = ?</property>
           Id="Package\Big Facts table creation\Data Conversion"
           TopLeft="250.814288536383,17.9470571075756" />
         <EdgeLayout
-          Id="Package\Big Facts table creation.Paths[OLE DB Source Output]"
-          TopLeft="155.2,28.8">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="95.6142885363831,9.94705710757559"
-              Start="0,0"
-              End="88.1142885363831,9.94705710757559">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="43.8071442681916,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="43.8071442681916,0"
-                    Point2="47.8071442681916,0"
-                    Point3="47.8071442681916,4" />
-                  <mssgle:LineSegment
-                    End="47.8071442681916,5.94705710757559" />
-                  <mssgle:CubicBezierSegment
-                    Point1="47.8071442681916,5.94705710757559"
-                    Point2="47.8071442681916,9.94705710757559"
-                    Point3="51.8071442681916,9.94705710757559" />
-                  <mssgle:LineSegment
-                    End="88.1142885363831,9.94705710757559" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="20.2676716119416,-15.568359375,55.0789453125,9.568359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Big Facts table creation.Paths[Lookup Match Output3]"
           TopLeft="291.085714528999,435.2">
           <EdgeLayout.Curve>
@@ -8194,7 +8158,7 @@ where [refTable].[tag] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-97.11173828125,26.6,161.0234765625,11.609375"
+              BoundingBox="-97.11173828125,26.6,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -8230,7 +8194,7 @@ where [refTable].[tag] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-90.5974543088797,36.1529407775113,161.0234765625,11.609375"
+              BoundingBox="-90.5974543088797,36.1529407775113,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -8254,7 +8218,7 @@ where [refTable].[tag] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-80.51173828125,20.8453125,161.0234765625,11.609375"
+              BoundingBox="-80.51173828125,20.8453125,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -8278,7 +8242,7 @@ where [refTable].[tag] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-80.51173828125,10.0453125,161.0234765625,11.609375"
+              BoundingBox="-80.51173828125,10.0453125,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -8313,9 +8277,41 @@ where [refTable].[tag] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-39.3180436323127,28.4735306687009,55.0789453125,9.568359375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Big Facts table creation.Paths[OLE DB Source Output]"
+          TopLeft="155.2,28.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="95.6142885363831,9.94705710757559"
+              Start="0,0"
+              End="88.1142885363831,9.94705710757559">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="43.8071442681916,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="43.8071442681916,0"
+                    Point2="47.8071442681916,0"
+                    Point3="47.8071442681916,4" />
+                  <mssgle:LineSegment
+                    End="47.8071442681916,5.94705710757559" />
+                  <mssgle:CubicBezierSegment
+                    Point1="47.8071442681916,5.94705710757559"
+                    Point2="47.8071442681916,9.94705710757559"
+                    Point3="51.8071442681916,9.94705710757559" />
+                  <mssgle:LineSegment
+                    End="88.1142885363831,9.94705710757559" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8327,7 +8323,7 @@ where [refTable].[tag] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -8337,7 +8333,7 @@ where [refTable].[tag] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -8535,9 +8531,7 @@ where [refTable].[tag] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8559,9 +8553,7 @@ where [refTable].[tag] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8583,9 +8575,7 @@ where [refTable].[tag] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8607,9 +8597,7 @@ where [refTable].[tag] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8643,9 +8631,7 @@ where [refTable].[tag] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8715,9 +8701,7 @@ where [refTable].[tag] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8751,9 +8735,7 @@ where [refTable].[tag] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8775,9 +8757,7 @@ where [refTable].[tag] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8835,9 +8815,7 @@ where [refTable].[tag] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8859,9 +8837,7 @@ where [refTable].[tag] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8883,9 +8859,7 @@ where [refTable].[tag] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8919,9 +8893,7 @@ where [refTable].[tag] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9061,7 +9033,7 @@ where [refTable].[tag] = ?</property>
     design-time-name="Package\Get data from csv">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="159.2,41.6"
           Id="Package\Get data from csv\Flat File Source 1"
@@ -9109,9 +9081,7 @@ where [refTable].[tag] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9133,9 +9103,7 @@ where [refTable].[tag] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9222,9 +9190,7 @@ where [refTable].[tag] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="29.0105293873379,-15.568359375,55.0789453125,9.568359375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9259,7 +9225,7 @@ where [refTable].[tag] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-121.826023241355,36.9529413609355,161.0234765625,11.609375"
+              BoundingBox="-121.826023241355,36.9529413609355,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -9295,7 +9261,7 @@ where [refTable].[tag] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="3.28826171874998,75.8,161.0234765625,11.609375"
+              BoundingBox="3.28826171874998,75.8,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -9331,7 +9297,7 @@ where [refTable].[tag] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-71.91173828125,26.6,161.0234765625,11.609375"
+              BoundingBox="-71.91173828125,26.6,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -9366,9 +9332,7 @@ where [refTable].[tag] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-88.689474699838,27.6735300852765,55.0789453125,9.568359375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9416,7 +9380,7 @@ where [refTable].[tag] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>

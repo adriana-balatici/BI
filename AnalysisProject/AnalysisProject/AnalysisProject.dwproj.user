@@ -3,7 +3,7 @@
     <Configuration>
       <Name>Development</Name>
       <Options>
-        <TargetServer>localhost</TargetServer>
+        <TargetServer>DESKTOP-37TE795\ANALYSISSERVER</TargetServer>
         <TargetDatabase>AnalysisProject</TargetDatabase>
         <StartObject>
           <ObjectId></ObjectId>
